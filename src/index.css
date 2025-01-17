@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './styles/components.css';
+@import './styles/gradients.css';
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-gray-800;
+  }
+}
+
+.glow-effect {
+  position: relative;
+  display: inline-block;
+}
+
+.glow-effect::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  border-radius: 12px; /* Match the rounded corners of your image */
+  background: linear-gradient(45deg, #ff6ec4, #7873f5);
+  filter: blur(12px);
+  opacity: 0.8;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.glow-effect:hover::before {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+/* another glow effects */
+
+/* .new-glow-effect {
+  position: relative;
+  padding: 16px; 
+  border-radius: 16px; 
+  background: rgba(255, 255, 255, 0.1); 
+  backdrop-filter: blur(10px); 
+  border: 1px solid rgba(255, 255, 255, 0.2); 
+  box-shadow: 0 0 30px rgba(50, 150, 255, 0.5);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.new-glow-effect:hover {
+  box-shadow: 0 0 60px rgba(94, 140, 189, 0.8), 0 0 100px rgba(50, 150, 255, 0.5);
+  transform: scale(1.05); 
+}
+
+.new-glow-effect::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: linear-gradient(45deg, #3b82f6, #9333ea);
+  border-radius: inherit;
+ 
+} */
+
+
+/* another one */
+
+
+/* .new-glow-effect {
+  @apply relative p-4 rounded-xl bg-white/10 backdrop-blur-lg border border-white/20 shadow-[0_0_30px_rgba(50,150,255,0.5)] transition-all duration-300;
+}
+
+.new-glow-effect:hover {
+  @apply shadow-[0_0_60px_rgba(94,140,189,0.8),0_0_100px_rgba(50,150,255,0.5)] scale-105;
+}
+
+.new-glow-effect::before {
+  content: '';
+  @apply absolute -inset-2 rounded-xl bg-gradient-to-r from-blue-500 to-purple-500 blur-md z-0;
+} */
+/* another one  */
+
+/* .new-glow-effect {
+  @apply relative p-4 rounded-xl bg-white/10 backdrop-blur-lg border border-white/20 shadow-[0_0_30px_rgba(50,150,255,0.5)] transition-all duration-300;
+}
+
+.new-glow-effect:hover {
+  @apply shadow-[0_0_60px_rgba(94,140,189,0.8),0_0_100px_rgba(50,150,255,0.5)] scale-105;
+}
+
+.new-glow-effect::before {
+  content: '';
+  @apply absolute -inset-2 rounded-xl bg-gradient-to-r from-[#6D4C41] to-[#8D6E63] blur-md z-0;
+} */
+
+/* another one  */
+
+/* .new-glow-effect {
+  @apply relative p-6 rounded-xl bg-neutral-900/30 backdrop-blur-lg border border-neutral-500/20 shadow-[0_0_20px_rgba(0,0,0,0.5)] transition-all duration-300;
+}
+
+.new-glow-effect:hover {
+  @apply shadow-[0_0_40px_rgba(0,153,255,0.8),0_0_80px_rgba(102,51,204,0.6)] scale-105;
+}
+
+.new-glow-effect::before {
+  content: '';
+  @apply absolute -inset-1.5 rounded-xl bg-gradient-to-r from-blue-600 via-blue-400 to-purple-700 blur-md z-0;
+} */
