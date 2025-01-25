@@ -3,7 +3,7 @@ import { Experience } from '../types';
 export const experiences: Experience[] = [
   {
     company: "Automation Service Limited.",
-    position: "Juniar Backend Developer",
+    position: "Junior Backend Developer",
     period: "September 2022 - December 2022",
     description: [
       "I was a pyton, Django developer",
@@ -26,7 +26,8 @@ export const experiences: Experience[] = [
     position: "Intern Frontend Developer",
     period: "July 2024 - November 2024",
     description: [
-      "I worked on multipel projects with React, typescript, javascript, tailwindcss, material-ui, etc",
+      "I worked on multipel frontend  projects with React, Typescript, JavaScript, Tailwindcss, Material-UI, Next.js ",
+      "I also  worked on some backend projects  with Node.js, Express.js, MongoDb and Mysql",
       "Implemented responsive designs and optimized performance",
       "colaborated with the team and maintained excellent communication"
     ]
