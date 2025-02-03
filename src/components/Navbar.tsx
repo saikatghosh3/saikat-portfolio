@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const navItems = [
   { label: 'Home', href: '/' },
   { label: 'Skills', href: '/skills' },
-  { label: 'Portfolio', href: '/portfolio' },
+  { label: 'Projects', href: '/portfolio' },
   { label: 'Experience', href: '/experience' },
   { label: 'Education', href: '/education' },
   { label: 'Contact', href: '/contact' },
