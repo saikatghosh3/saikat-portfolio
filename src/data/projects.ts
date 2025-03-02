@@ -1,8 +1,8 @@
 import { Project } from '../types';
-import image1 from '../assets/E-commerce.jpg';
+// import image1 from '../assets/E-commerce.jpg';
 import image2 from '../assets/Business.jpg';
-import image3 from '../assets/Landing page.jpg';
-import image4 from '../assets/Travel.jpg';
+// import image3 from '../assets/Landing page.jpg';
+// import image4 from '../assets/Travel.jpg';
 import image5 from '../assets/Healthcare.jpg.jpg';
 import image6 from '../assets/MovieApp.jpg.jpg';
 import image7 from '../assets/Universiy.jpg.jpg';
