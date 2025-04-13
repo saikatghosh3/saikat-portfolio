@@ -6,10 +6,11 @@ export const CVDownload = () => {
 
   const handleDownload = () => {
     // Replace with your actual CV file URL
-    const cvUrl = 'https://drive.google.com/file/d/15IyCzJW29r-QqOZZYpzluifSqfw_SsHG/view?usp=sharing';
+    // const cvUrl = 'https://drive.google.com/file/d/15IyCzJW29r-QqOZZYpzluifSqfw_SsHG/view?usp=sharing';
+    const cvUrl = 'https://drive.google.com/file/d/1wcHphxL-q_6GPMn1rauDZuMBxSJvK0om/view?usp=sharing';
     const link = document.createElement('a');
     link.href = cvUrl;
-    link.download = 'YourName-CV.pdf';
+    link.download = 'Saikat Ghosh-CV.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
