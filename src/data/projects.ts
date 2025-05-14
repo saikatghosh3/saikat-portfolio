@@ -37,7 +37,7 @@ export const projects: Project[] = [
     description: "A responsive Movie app  with a clean design and reusable components",
     technologies: ["React",  "Tailwind css", "TypeScript", "vite"],
     imageUrl: image6,
-    liveUrl: "https://react-movie-app-seven-pi.vercel.app/genre/35",
+    liveUrl: "https://react-movie-app-seven-pi.vercel.app/",
     githubUrl: "https://github.com"
   },
   // {
