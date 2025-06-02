@@ -6,6 +6,7 @@ import image2 from '../assets/Business.jpg';
 import image5 from '../assets/Healthcare.jpg.jpg';
 import image6 from '../assets/MovieApp.jpg.jpg';
 import image7 from '../assets/Universiy.jpg.jpg';
+import image8 from '../assets/Cartoon.jpeg';
 
 export const projects: Project[] = [
   // {
@@ -48,6 +49,14 @@ export const projects: Project[] = [
   //   liveUrl: "https://landing-page-design-eight-topaz.vercel.app/",
   //   githubUrl: "https://github.com"
   // },
+  {
+    title: "Rick and Morty wiki(cartoon website)",
+    description: "A responsive cartoon website from figma prototype with a clean design and reusable components",
+    technologies: ["React", "Raw CSS","vite"],
+    imageUrl: image8,
+    liveUrl: "rickandmorty-swart-three.vercel.app",
+    githubUrl: "https://github.com"
+  },
   {
     title: "University website",
     description: "A responsive University website with a clean code and  design",
