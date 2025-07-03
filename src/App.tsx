@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { ScrollToTop } from './components/ScrollToTop';
+import { ScrollToTop1 } from './components/ScrollToTop1';
 import { Home } from './pages/Home';
 import { SkillsPage } from './pages/SkillsPage';
 import { PortfolioPage } from './pages/PortfolioPage';
@@ -14,6 +15,7 @@ export function App() {
     <Router>
       <div className="min-h-screen animated-gradient">
         <Navbar />
+        <ScrollToTop1 />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/skills" element={<SkillsPage />} />

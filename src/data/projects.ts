@@ -7,6 +7,7 @@ import image5 from '../assets/Healthcare.jpg.jpg';
 import image6 from '../assets/MovieApp.jpg.jpg';
 import image7 from '../assets/Universiy.jpg.jpg';
 import image8 from '../assets/Cartoon.jpeg';
+import image9 from '../assets/Expense-tracker.png';
 
 export const projects: Project[] = [
   // {
@@ -63,6 +64,14 @@ export const projects: Project[] = [
     technologies: ["Html", "Css", "JavaScript",],
     imageUrl: image7,
     liveUrl: "https://university-website-responsive.vercel.app/",
+    githubUrl: "https://github.com"
+  },
+  {
+    title: "Expense-tracker",
+    description: "A responsive Expense-tracker app ",
+    technologies: ["React", "Tailwind css"],
+    imageUrl: image9,
+    liveUrl: "https://expense-tracker-git-main-saikat-ghoshs-projects.vercel.app/",
     githubUrl: "https://github.com"
   }
   // {
