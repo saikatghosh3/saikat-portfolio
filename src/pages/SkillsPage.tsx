@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { skills } from '../data/skills';
 import { Code, Database, Palette, Terminal } from 'lucide-react';
 
@@ -11,8 +12,16 @@ const icons = {
 export const SkillsPage = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-      <h1 className="text-4xl font-bold text-center mb-16 animate-fade-in">My Skills & Expertise</h1>
-      
+      <div className="text-center mb-16">
+        <h1 className="text-4xl font-bold mb-2">My Skills & Expertise</h1>
+        <motion.div
+          initial={{ width: 0 }}
+          animate={{ width: '23rem' }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          className="h-1 bg-blue-500 mx-auto rounded"
+        />
+      </div>
+
       <div className="grid gap-12">
         {Object.entries(skills).map(([category, items], index) => {
           const Icon = icons[category] || Code;
@@ -28,7 +37,7 @@ export const SkillsPage = () => {
                 </div>
                 <h2 className="text-2xl font-semibold">{category}</h2>
               </div>
-              
+
               <div className="grid md:grid-cols-2 gap-8">
                 {items.map((skill) => (
                   <div key={skill.name} className="group">

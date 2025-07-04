@@ -88,7 +88,7 @@ export const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <Link to="/" className="text-xl font-bold text-gray-700">
+            <Link to="/" className="text-xl font-bold text-gray-900">
               Saikat Ghosh
             </Link>
           </div>
@@ -99,7 +99,7 @@ export const Navbar = () => {
               <Link
                 key={item.label}
                 to={item.href}
-                className="relative text-gray-700 hover:text-[#99d8c2] transition-colors group"
+                className="relative text-gray-900 hover:text-[#99d8c2] transition-colors group"
               >
                 {item.label}
                 <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-[#99d8c2] transition-all duration-300 group-hover:w-full"></span>
@@ -127,7 +127,7 @@ export const Navbar = () => {
               <Link
                 key={item.label}
                 to={item.href}
-                className="block px-3 py-2 text-gray-700 hover:text-[#99d8c2] transition-colors"
+                className="block px-3 py-2 text-gray-900 hover:text-[#99d8c2] transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 {item.label}
