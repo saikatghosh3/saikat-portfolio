@@ -67,6 +67,84 @@
 //   );
 // };
 
+
+// main cod below ***********************
+
+// import { Menu, X } from 'lucide-react';
+// import { useState } from 'react';
+// import { Link } from 'react-router-dom';
+
+// const navItems = [
+//   { label: 'Home', href: '/' },
+//   { label: 'Skills', href: '/skills' },
+//   { label: 'Projects', href: '/portfolio' },
+//   { label: 'Experience', href: '/experience' },
+//   { label: 'Education', href: '/education' },
+//   { label: 'Contact', href: '/contact' },
+// ];
+
+// export const Navbar = () => {
+//   const [isOpen, setIsOpen] = useState(false);
+
+//   return (
+//     <nav className="fixed w-full bg-[#d5f4e6]/80 backdrop-blur-sm shadow-md z-50">
+//       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+//         <div className="flex justify-between h-16">
+//           <div className="flex items-center">
+//             <Link to="/" className="text-xl font-bold text-gray-900">
+//               Saikat Ghosh
+//             </Link>
+//           </div>
+
+//           {/* Desktop Navigation */}
+//           <div className="hidden md:flex items-center space-x-8">
+//             {navItems.map((item) => (
+//               <Link
+//                 key={item.label}
+//                 to={item.href}
+//                 className="relative text-gray-900 hover:text-[#99d8c2] transition-colors group"
+//               >
+//                 {item.label}
+//                 <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-[#99d8c2] transition-all duration-300 group-hover:w-full"></span>
+//               </Link>
+//             ))}
+//           </div>
+
+//           {/* Mobile Menu Toggle */}
+//           <div className="md:hidden flex items-center">
+//             <button
+//               onClick={() => setIsOpen(!isOpen)}
+//               className="p-2 rounded-md text-gray-700"
+//             >
+//               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+//             </button>
+//           </div>
+//         </div>
+//       </div>
+
+//       {/* Mobile Menu */}
+//       {isOpen && (
+//         <div className="md:hidden">
+//           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-[#d5f4e6]/80 backdrop-blur-sm">
+//             {navItems.map((item) => (
+//               <Link
+//                 key={item.label}
+//                 to={item.href}
+//                 className="block px-3 py-2 text-gray-900 hover:text-[#99d8c2] transition-colors"
+//                 onClick={() => setIsOpen(false)}
+//               >
+//                 {item.label}
+//               </Link>
+//             ))}
+//           </div>
+//         </div>
+//       )}
+//     </nav>
+//   );
+// };
+
+
+
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -105,6 +183,16 @@ export const Navbar = () => {
                 <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-[#99d8c2] transition-all duration-300 group-hover:w-full"></span>
               </Link>
             ))}
+            {/* Blog External Link */}
+            <a
+              href="https://learning-english-and-web-development.blogspot.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative text-gray-900 hover:text-[#99d8c2] transition-colors group"
+            >
+              Blog
+              <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-[#99d8c2] transition-all duration-300 group-hover:w-full"></span>
+            </a>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -133,6 +221,16 @@ export const Navbar = () => {
                 {item.label}
               </Link>
             ))}
+            {/* Blog link in mobile menu */}
+            <a
+              href="https://learning-english-and-web-development.blogspot.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block px-3 py-2 text-gray-900 hover:text-[#99d8c2] transition-colors"
+              onClick={() => setIsOpen(false)}
+            >
+              Blog
+            </a>
           </div>
         </div>
       )}
