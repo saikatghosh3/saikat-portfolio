@@ -43,6 +43,16 @@ export const skills: SkillCategory = {
   ],
   Backend: [
     {
+  name: "PHP",
+  level: 80,
+  description: "Developed dynamic and secure server-side applications, handled form validation, and integrated MySQL for database operations."
+},
+{
+  name: "Laravel",
+  level: 85,
+  description: "Built RESTful APIs, implemented authentication, managed Eloquent ORM, and optimized backend performance for scalable web applications."
+},
+    {
       name: "Node.js",
       level: 75,
       description: "RESTful APIs, Express.js, and server-side rendering"
