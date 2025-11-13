@@ -1,3 +1,4 @@
+
 import { Project } from '../types';
 // import image1 from '../assets/E-commerce.jpg';
 import image2 from '../assets/Business.jpg';
@@ -8,6 +9,11 @@ import image6 from '../assets/MovieApp.jpg.jpg';
 import image7 from '../assets/Universiy.jpg.jpg';
 import image8 from '../assets/Cartoon.jpeg';
 import image9 from '../assets/Expense-tracker.png';
+import image10 from '../assets/Arcabit.jpg';
+import image11 from '../assets/newsPaper.jpg';
+import image12 from '../assets/BusinessPortfolio.jpg';
+import image13 from '../assets/ReactLandingPage.jpg';
+
 
 export const projects: Project[] = [
   // {
@@ -72,6 +78,38 @@ export const projects: Project[] = [
     technologies: ["React", "Tailwind css"],
     imageUrl: image9,
     liveUrl: "https://expense-tracker-git-main-saikat-ghoshs-projects.vercel.app/",
+    githubUrl: "https://github.com"
+  },
+  {
+    title: "Arcabit",
+    description: "A responsive landing page website (Antivirus software) ",
+    technologies: ["Html", "css", "JavaScript"],
+    imageUrl: image10,
+    liveUrl: "https://arcabait-webstie.vercel.app/",
+    githubUrl: "https://github.com"
+  },
+  {
+    title: "News app",
+    description: "A full-stack news app for production use with authentication and authorization",
+    technologies: ["PHP", "Laravel", "MySQL", "Bootstrap", "Tailwind CSS", "JavaScript"],
+    imageUrl: image11,
+    liveUrl: "https://trustnews.press/",
+    githubUrl: "https://github.com"
+  },
+  {
+    title: "Personal Business portfolio ",
+    description: "A personal business portfolio website with a modern design and smooth animations",
+    technologies: ["Tailwind CSS", "JavaScript", "Html", "Css"],
+    imageUrl: image12,
+    liveUrl: "https://dtrixithubnew.netlify.app/",
+    githubUrl: "https://github.com"
+  },
+  {
+    title: "Simple React Landing Page",
+    description: "A simple React landing page with responsive design and smooth scrolling",
+    technologies: ["React", "Tailwind CSS", "JavaScript"],
+    imageUrl: image13,
+    liveUrl: "https://dtrixithubnew.netlify.app/",
     githubUrl: "https://github.com"
   }
   // {

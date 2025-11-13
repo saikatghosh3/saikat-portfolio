@@ -50,7 +50,7 @@ export const CVDownload = () => {
               <div className="space-y-4">
                 <div>
                   <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400">Latest Position</h4>
-                  <p className="text-indigo-600 dark:text-indigo-400">Front end developer Intern at Itransition Group.</p>
+                  <p className="text-indigo-600 dark:text-indigo-400">Junior web developer at Rafusoft, Dhaka, Bangladesh.</p>
                 </div>
                 <div>
                   <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400">Education</h4>
@@ -59,7 +59,7 @@ export const CVDownload = () => {
                 <div>
                   <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400">Key Skills</h4>
                   <div className="flex flex-wrap gap-2 mt-1">
-                    {['React', 'TypeScript', 'Node.js', 'Tailwind CSS, Bootstrp, material-ui, Express .js, Redux'].map((skill) => (
+                    {[ 'JavaScript','React', 'TypeScript', 'Node.js', 'Tailwind CSS', 'Bootstrp', 'Express.js', 'MySql', 'Php', 'Laravel'].map((skill) => (
                       <span key={skill} className="skill-tag">
                         {skill}
                       </span>
