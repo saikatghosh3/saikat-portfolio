@@ -50,7 +50,7 @@ export const CVDownload = () => {
               <div className="space-y-4">
                 <div>
                   <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400">Latest Position</h4>
-                  <p className="text-indigo-600 dark:text-indigo-400">Junior web developer at Rafusoft, Dhaka, Bangladesh.</p>
+                  <p className="text-indigo-600 dark:text-indigo-400">Software Engineer(React.js) at Roxnor,Dhaka,Bangladesh.</p>
                 </div>
                 <div>
                   <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400">Education</h4>

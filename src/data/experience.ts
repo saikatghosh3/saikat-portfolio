@@ -3,9 +3,24 @@ import { Experience } from '../types';
 export const experiences: Experience[] = [
 
      {
+  company: "Roxnor, Dhaka, Bangladesh",
+  position: "Software Developer (React.js)",
+  period: "January 2026 - Present",
+  description: [
+    "Developing modern and scalable web applications using React.js, JavaScript, and TypeScript",
+    
+    "Building reusable and maintainable UI components while ensuring responsive design across different devices",
+    
+    "Integrating APIs and handling dynamic data to improve application functionality and user experience",
+    
+    "Collaborating with team members through code reviews, version control (Git), and agile development practices",
+    
+    "Optimizing application performance and improving UI/UX using modern frontend development practices"
+  ]
+},{
     company: "Rafusoft,Dhaka Bangladesh.",
     position: "Junior web developer",
-    period: "Atugust 2025 - Till now",
+    period: "Atugust 2025 - December 2025",
     description: [
    "Worked on multiple projects using PHP, Laravel, React, TypeScript, JavaScript, Tailwind CSS, and MySQL",
 
