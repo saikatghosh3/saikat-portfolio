@@ -16,8 +16,8 @@ export const Skills = () => {
   return (
     <section id="skills" className="min-h-screen flex items-center justify-center py-20 section-gradient">
       <div className="max-w-4xl mx-auto px-4 sm:px-6  lg:px-8">
-        <h2 className="text-3xl font-bold text-center mb-12  text-gray-700 animate-fade-in">Skills</h2>
-        <div className="grid md:grid-cols-2 gap-8  ">
+        <h2 className="text-3xl font-bold text-center mb-12  text-white animate-fade-in">Skills</h2>
+        <div className="grid md:grid-cols-2 gap-8 text-white  ">
           {skills.map((skillGroup, index) => (
             <div
               key={skillGroup.category}
@@ -25,14 +25,14 @@ export const Skills = () => {
               // on the above line we should add the class for glowing effect 
               style={{ animationDelay: `${index * 0.2}s` }}
             >
-              <h3 className="text-xl font-semibold mb-4  text-gray-700">{skillGroup.category}</h3>
+              <h3 className="text-xl font-semibold mb-4  text-white">{skillGroup.category}</h3>
               <div className="flex flex-wrap gap-3">
                 {skillGroup.items.map((skill) => (
                   <span
                     key={skill}
                     className="px-3 py-1 rounded-full bg-white/30 backdrop-blur-sm
-                             border border-white/20 text-gray-700 text-sm
-                             hover:scale-110 transition-transform duration-200"
+                             border border-white/20 text-sm
+                             hover:scale-110 transition-transform duration-200 text-white"
                   >
                     {skill}
                   </span>

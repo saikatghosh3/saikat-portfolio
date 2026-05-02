@@ -1,14 +1,6 @@
 @layer utilities {
   .animated-gradient {
-    background: linear-gradient(
-      300deg,
-      #d5f4e6,
-      #a8e6cf,
-      #99d8c2,
-      #d5f4e6
-    );
-    background-size: 240% 240%;
-    @apply animate-gradient;
+    background: #30121B;
   }
 
   .card-gradient-1 {

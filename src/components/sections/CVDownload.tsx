@@ -17,12 +17,12 @@ export const CVDownload = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-gray-900 dark:to-indigo-950">
+    <section className="py-20 bg-[#30121B]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="card p-8 backdrop-blur-sm bg-white/50 dark:bg-gray-800/50">
+        <div className="card p-8 rounded-3xl shadow-2xl bg-white/10 border border-white/10 backdrop-blur-xl">
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold mb-4">Download My CV</h2>
-            <p className="text-gray-600 dark:text-gray-300">
+            <h2 className="text-3xl font-bold text-white mb-4">Download My CV</h2>
+            <p className="text-gray-300">
               Get a detailed overview of my skills, experience, and qualifications
             </p>
           </div>
@@ -45,7 +45,7 @@ export const CVDownload = () => {
           </div>
 
           {isPreviewOpen && (
-            <div className="mt-8 p-6 border rounded-lg bg-white dark:bg-gray-700 animate-fade-in">
+            <div className="mt-8 p-6 border rounded-lgbg-[#30121B] dark:bg-gray-700 animate-fade-in">
               <h3 className="font-semibold mb-4">CV Highlights</h3>
               <div className="space-y-4">
                 <div>

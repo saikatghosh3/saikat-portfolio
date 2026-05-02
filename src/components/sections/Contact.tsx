@@ -10,7 +10,7 @@ export const Contact = () => {
       <div className="space-y-9">
         <div className="card p-6 mx-auto">
           <h3 className="text-xl font-semibold mb-4">Get in Touch</h3>
-          <p className="text-gray-600 dark:text-gray-300 mb-6">
+          <p className="text-white dark:text-gray-300 mb-6">
             I'm always open to new opportunities and collaborations. Feel free to reach out!
           </p>
           <div className="space-y-4">

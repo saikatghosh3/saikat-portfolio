@@ -2,7 +2,7 @@ import { Facebook, Github, Instagram, Linkedin, Mail, Youtube } from 'lucide-rea
 
 export const Footer = () => {
   return (
-    <footer className="bg-emerald-200 dark:bg-gray-800 shadow-lg mt-20">
+    <footer className="bg-black dark:bg-gray-800 shadow-lg mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -45,7 +45,7 @@ export const Footer = () => {
           </div>
           
         </div>
-        <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700 text-center text-sm text-gray-600 dark:text-gray-400">
+        <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700 text-center text-sm text-white dark:text-gray-400">
           © {new Date().getFullYear()} Saikat Ghosh. All rights reserved.
         </div>
       </div>
