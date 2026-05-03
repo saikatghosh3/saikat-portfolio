@@ -11,7 +11,7 @@
   }
 
   body {
-    @apply text-white bg-[#30121B];
+    @apply text-white bg-slate-950;
   }
 }
 
@@ -30,13 +30,44 @@
   z-index: -1;
   border-radius: 12px; /* Match the rounded corners of your image */
   background: linear-gradient(45deg, #ff6ec4, #7873f5);
-  filter: blur(12px);
-  opacity: 0.8;
+  filter: blur(8px);
+  opacity: 0.25;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .glow-effect:hover::before {
   transform: scale(1.05);
-  opacity: 1;
+  opacity: 0.4;
 }
 
+
+/* card design  */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}

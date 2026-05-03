@@ -10,6 +10,7 @@ import { ExperiencePage } from './pages/ExperiencePage';
 import { ContactPage } from './pages/ContactPage';
 import { EducationPage} from './pages/EducationPage';
 
+
 export function App() {
   return (
     <Router>

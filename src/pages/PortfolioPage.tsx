@@ -4,8 +4,8 @@ import { Portfolio } from '../components/sections/Portfolio';
 
 export const PortfolioPage = () => {
   return (
-    <div className="pt-20">
-      <div className="text-center mb-16">
+    <div className="pt-16">
+      <div className="text-center mb-8 sm:mb-10">
         <h1 className="text-4xl font-bold mb-2">My Creative Portfolio</h1>
         <motion.div
           initial={{ width: 0 }}
