@@ -48,6 +48,8 @@
 
 import image1 from '../../assets/Saikat.jpg';
 import { Code2, Sparkles, Rocket, Zap } from 'lucide-react';
+import { useEffect, useState } from "react";
+
 
 export const About = () => {
   const highlights = [
@@ -72,11 +74,45 @@ export const About = () => {
       description: 'Efficient workflow & clean code'
     }
   ];
+ const text = "Hi, I am Saikat Ghosh";
+const [displayText, setDisplayText] = useState("");
+const [index, setIndex] = useState(0);
+const [isDeleting, setIsDeleting] = useState(false);
+const [loopCount, setLoopCount] = useState(0);
+
+ 
+useEffect(() => {
+  if (loopCount >= 25) return; 
+
+ let timeout: any;
+
+  if (!isDeleting && index < text.length) {
+    timeout = setTimeout(() => {
+      setDisplayText((prev) => prev + text[index]);
+      setIndex(index + 1);
+    }, 80);
+  } 
+  else if (isDeleting && index > 0) {
+    timeout = setTimeout(() => {
+      setDisplayText((prev) => prev.slice(0, -1));
+      setIndex(index - 1);
+    }, 40);
+  } 
+  else if (index === text.length) {
+    timeout = setTimeout(() => setIsDeleting(true), 800);
+  } 
+  else if (index === 0 && isDeleting) {
+    setIsDeleting(false);
+    setLoopCount((prev) => prev + 1); // ✅ count loop
+  }
+
+  return () => clearTimeout(timeout);
+}, [index, isDeleting, loopCount]);
 
   return (
     <section id="about" className="relative py-16 sm:py-20 overflow-hidden">
       {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-950 via-purple-950 to-slate-900" />
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-indigo-500/10 via-transparent to-transparent" />
       
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -96,7 +132,10 @@ export const About = () => {
           <div className="space-y-8">
             <div className="backdrop-blur-sm bg-white/5 rounded-2xl p-6 sm:p-8 border border-white/10 shadow-xl">
               <p className="text-gray-200 text-base sm:text-lg leading-relaxed">
-                Hi! I'm a passionate <span className="text-indigo-400 font-semibold">Frontend Developer</span> 
+                   {displayText}
+            <span className="animate-pulse">|</span>
+             <br />
+                 a passionate <span className="text-indigo-400 font-semibold">Frontend Developer</span> 
                 with expertise in building modern web applications using React, TypeScript, Next.js, 
                 MUI, TailwindCSS, and other cutting-edge technologies.
               </p>
@@ -148,18 +187,6 @@ export const About = () => {
             <div className="absolute -bottom-4 -left-4 w-20 h-20 bg-indigo-500/10 rounded-full blur-lg" />
             <div className="absolute -top-4 -right-4 w-24 h-24 bg-purple-500/10 rounded-full blur-lg" />
           </div>
-        </div>
-
-        {/* Tech Stack Tags */}
-        <div className="mt-10 sm:mt-12 flex flex-wrap justify-center gap-3">
-          {['React', 'TypeScript', 'Next.js', 'TailwindCSS', 'MUI', 'Node.js'].map((tech) => (
-            <span
-              key={tech}
-              className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-gray-300 text-sm font-medium hover:border-indigo-500/50 hover:text-indigo-400 transition-all duration-300"
-            >
-              {tech}
-            </span>
-          ))}
         </div>
       </div>
     </section>

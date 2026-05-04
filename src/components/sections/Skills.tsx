@@ -86,7 +86,7 @@ export const Skills = () => {
   return (
     <section id="skills" className="relative py-16 sm:py-20 overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-purple-950 to-slate-900" />
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-indigo-500/5 via-transparent to-transparent" />
       
       {/* Animated Background Orbs */}
@@ -182,35 +182,7 @@ export const Skills = () => {
           })}
         </div>
 
-        {/* Additional Stats Bar */}
-        <div className="mt-10 sm:mt-12 pt-6 border-t border-white/10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            <div className="space-y-2">
-              <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">
-                5+
-              </div>
-              <div className="text-sm text-gray-400">Years Experience</div>
-            </div>
-            <div className="space-y-2">
-              <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">
-                50+
-              </div>
-              <div className="text-sm text-gray-400">Projects Completed</div>
-            </div>
-            <div className="space-y-2">
-              <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">
-                20+
-              </div>
-              <div className="text-sm text-gray-400">Happy Clients</div>
-            </div>
-            <div className="space-y-2">
-              <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">
-                100%
-              </div>
-              <div className="text-sm text-gray-400">Code Quality</div>
-            </div>
-          </div>
-        </div>
+
       </div>
     </section>
   );

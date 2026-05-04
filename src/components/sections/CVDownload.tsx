@@ -125,32 +125,7 @@ export const CVDownload = () => {
           
           <div className="relative backdrop-blur-sm bg-white/5 rounded-2xl border border-white/10 p-8 sm:p-10 hover:border-white/20 transition-all duration-500">
             {/* Stats Row */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-10 pb-8 border-b border-white/10">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">
-                  5+
-                </div>
-                <div className="text-xs text-gray-500 mt-1">Years Experience</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">
-                  20+
-                </div>
-                <div className="text-xs text-gray-500 mt-1">Projects Completed</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">
-                  15+
-                </div>
-                <div className="text-xs text-gray-500 mt-1">Technologies</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">
-                  100%
-                </div>
-                <div className="text-xs text-gray-500 mt-1">Client Satisfaction</div>
-              </div>
-            </div>
+          
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
