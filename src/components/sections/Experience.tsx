@@ -163,13 +163,15 @@ export const Experience = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div className="space-y-2">
               <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">
-                {experiences.length}+
+                {/* {experiences.length} + */}
+                2+
               </div>
               <div className="text-sm text-gray-400">Years Experience</div>
             </div>
             <div className="space-y-2">
               <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">
-                {experiences.reduce((sum, exp) => sum + exp.description.length, 0)}+
+                {/* {experiences.reduce((sum, exp} => sum + exp.description.length, 0)}+ */}
+                5+
               </div>
               <div className="text-sm text-gray-400">Achievements</div>
             </div>

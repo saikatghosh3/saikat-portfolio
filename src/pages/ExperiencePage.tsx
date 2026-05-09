@@ -44,15 +44,17 @@ export const ExperiencePage = () => {
             <Briefcase className="w-3 h-3 text-indigo-400" />
             <span className="text-indigo-400 text-xs font-medium">WORK HISTORY</span>
           </div>
-          <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-            Professional Experience
-          </h1>
-          <motion.div
-            initial={{ width: 0 }}
-            animate={{ width: '100%' }}
-            transition={{ duration: 0.6, ease: 'easeInOut' }}
-            className="h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto rounded-full max-w-[12rem] sm:max-w-[16rem] md:max-w-[20rem]"
-          />
+         <div className="w-fit mx-auto mb-8">
+  <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2 text-center">
+    Professional Experience
+  </h1>
+  <motion.div
+    initial={{ width: 0 }}
+    animate={{ width: '100%' }}
+    transition={{ duration: 0.6, ease: 'easeInOut' }}
+    className="h-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full"
+  />
+</div>
           <p className="mt-6 text-gray-400 max-w-2xl mx-auto">
             A journey of innovation, leadership, and technical excellence
           </p>
@@ -138,7 +140,7 @@ export const ExperiencePage = () => {
         <div className="mt-12 flex flex-wrap justify-center gap-4">
           <div className="px-4 py-2 rounded-lg bg-white/5 border border-white/10">
             <span className="text-sm text-gray-400">
-              Total Experience: {experiences.length}+ years
+              Total Experience: 2+ years
             </span>
           </div>
           <div className="px-4 py-2 rounded-lg bg-white/5 border border-white/10">

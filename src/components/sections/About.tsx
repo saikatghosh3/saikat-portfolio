@@ -49,6 +49,7 @@
 import image1 from '../../assets/Saikat.jpg';
 import { Code2, Sparkles, Rocket, Zap } from 'lucide-react';
 import { useEffect, useState } from "react";
+import { motion } from 'framer-motion';
 
 
 export const About = () => {
@@ -121,10 +122,17 @@ useEffect(() => {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 mb-4">
             <span className="text-indigo-400 text-xs font-medium">GET TO KNOW ME</span>
           </div>
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-            About Me
-          </h2>
-          <div className="h-1 w-20 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full mx-auto" />
+         <div className="w-fit mx-auto mb-8">
+  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2 text-center">
+    About Me
+  </h2>
+  <motion.div
+    initial={{ width: 0 }}
+    animate={{ width: '100%' }}
+    transition={{ duration: 0.6, ease: 'easeInOut' }}
+    className="h-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full"
+  />
+</div>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">

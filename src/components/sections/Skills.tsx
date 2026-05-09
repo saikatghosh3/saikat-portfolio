@@ -47,18 +47,19 @@
 // };
 
 import { Code2, Palette, Wrench, TestTube2, Sparkles, Shield, Clock, GitBranch } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const skills = [
   {
     category: 'Frontend',
     icon: Code2,
-    items: ['React', 'TypeScript', 'JavaScript', 'HTML5', 'CSS3'],
+    items: ['React', 'TypeScript', 'JavaScript', 'Next.js', ],
     description: 'Building modern, reactive user interfaces'
   },
   {
     category: 'Styling',
     icon: Palette,
-    items: ['Tailwind CSS', 'Bootstrap', 'MUI', 'Sass'],
+    items: ['Tailwind CSS', 'MUI', 'Scss', 'Ant Design'],
     description: 'Creating beautiful, responsive designs'
   },
   {
@@ -100,12 +101,19 @@ export const Skills = () => {
             <Sparkles className="w-3 h-3 text-indigo-400" />
             <span className="text-indigo-400 text-xs font-medium">MY EXPERTISE</span>
           </div>
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-            Technical Skills
-          </h2>
-          <div className="h-1 w-20 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full mx-auto" />
+       <div className="w-fit mx-auto mb-8">
+  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2 text-center">
+    Technical Skills
+  </h2>
+  <motion.div
+    initial={{ width: 0 }}
+    animate={{ width: '100%' }}
+    transition={{ duration: 0.6, ease: 'easeInOut' }}
+    className="h-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full"
+  />
+</div>
           <p className="mt-6 text-gray-400 max-w-2xl mx-auto">
-            Over 5+ years of experience mastering these technologies and tools
+            Over 2+ years of experience mastering these technologies and tools
           </p>
         </div>
 

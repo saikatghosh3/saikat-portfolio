@@ -88,6 +88,8 @@
 import { projects } from '../../data/projects';
 import { Github, Link, ExternalLink, Star, GitFork, Calendar } from 'lucide-react';
 import { useState } from 'react';
+import {motion} from 'framer-motion';
+import { Star as StarIcon } from 'lucide-react';
 
 export const Portfolio = () => {
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
@@ -109,10 +111,17 @@ export const Portfolio = () => {
             <Star className="w-3 h-3 text-indigo-400" />
             <span className="text-indigo-400 text-xs font-medium">MY WORK</span>
           </div>
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-            Featured Projects
-          </h2>
-          <div className="h-1 w-20 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full mx-auto" />
+       <div className="w-fit mx-auto mb-8">
+  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2 text-center">
+    Featured Projects
+  </h2>
+  <motion.div
+    initial={{ width: 0 }}
+    animate={{ width: '100%' }}
+    transition={{ duration: 0.6, ease: 'easeInOut' }}
+    className="h-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full"
+  />
+</div>
           <p className="mt-6 text-gray-400 max-w-2xl mx-auto">
             Real-world applications showcasing my expertise in modern web development
           </p>

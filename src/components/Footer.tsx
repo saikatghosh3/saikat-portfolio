@@ -76,10 +76,18 @@ export const Footer = () => {
             <p className="text-gray-400 text-sm leading-relaxed">
               Frontend Developer creating modern, responsive web applications with cutting-edge technologies.
             </p>
-            <div className="flex items-center gap-2 mt-4 text-xs text-gray-500">
-              <Heart className="w-3 h-3 text-red-400" />
-              <span>Crafting code with passion</span>
-            </div>
+           <div className="mt-4 flex items-center gap-2 text-sm text-gray-500">
+  <Heart className="w-4 h-4 text-red-400 flex-shrink-0" />
+
+  <p className="leading-snug">
+    <span className="block sm:inline">
+      Crafting code
+    </span>
+    <span className="block sm:inline sm:ml-1">
+      with passion
+    </span>
+  </p>
+</div>
           </div>
 
           {/* Quick Links */}
@@ -192,16 +200,22 @@ export const Footer = () => {
             </div>
             {/* Blog Link */}
             <div className="mt-4 pt-4 border-t border-white/10">
-              <a
-                href="https://learning-english-and-web-development.blogspot.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-gray-400 hover:text-indigo-400 text-sm transition-colors group"
-              >
-                <span>📝</span>
-                <span>Visit my Blog</span>
-                <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </a>
+         <a
+  href="https://learning-english-and-web-development.blogspot.com"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="group inline-flex items-center gap-2 px-3 py-1.5 rounded-md 
+             bg-indigo-500/10 text-gray-300 hover:text-white 
+             hover:bg-indigo-500/20 transition-all duration-300"
+>
+  <span className="text-indigo-400 group-hover:text-white">🌐</span>
+
+  <span className="text-sm font-medium">
+    Visit My Blog
+  </span>
+
+  <ExternalLink className="w-3.5 h-3.5 opacity-60 group-hover:opacity-100 transition" />
+</a>
             </div>
           </div>
         </div>
@@ -212,9 +226,7 @@ export const Footer = () => {
             <p className="text-xs text-gray-500">
               © {new Date().getFullYear()} Saikat Ghosh. All rights reserved.
             </p>
-            <p className="text-xs text-gray-500">
-              Built with <span className="text-red-400">❤</span> using React & TailwindCSS
-            </p>
+           
           </div>
         </div>
       </div>
