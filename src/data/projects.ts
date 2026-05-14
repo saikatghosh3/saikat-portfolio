@@ -13,6 +13,7 @@ import image10 from '../assets/Arcabit.jpg';
 import image11 from '../assets/newsPaper.jpg';
 import image12 from '../assets/BusinessPortfolio.jpg';
 import image13 from '../assets/ReactLandingPage.jpg';
+import image14 from '../assets/DeshiMango.png'
 
 
 export const projects: Project[] = [
@@ -57,11 +58,11 @@ export const projects: Project[] = [
   //   githubUrl: "https://github.com"
   // },
   {
-    title: "Rick and Morty wiki(cartoon website)",
-    description: "A responsive cartoon website from figma prototype with a clean design and reusable components",
-    technologies: ["React", "Raw CSS","vite"],
-    imageUrl: image8,
-    liveUrl: "rickandmorty-swart-three.vercel.app",
+    title: "Desi Mango",
+    description: "A responsive full-stack website with clean design and reusable components ",
+    technologies: ["Next.js", "Tailwind css","MongoDb"],
+    imageUrl: image14,
+    liveUrl: "https://desi-mango-fullstack.vercel.app",
     githubUrl: "https://github.com"
   },
   {
@@ -88,14 +89,14 @@ export const projects: Project[] = [
     liveUrl: "https://arcabait-webstie.vercel.app/",
     githubUrl: "https://github.com"
   },
-  {
-    title: "News app",
-    description: "A full-stack news app for production use with authentication and authorization",
-    technologies: ["PHP", "Laravel", "MySQL", "Bootstrap", "Tailwind CSS", "JavaScript"],
-    imageUrl: image11,
-    liveUrl: "https://trustnews.press/",
-    githubUrl: "https://github.com"
-  },
+  // {
+  //   title: "News app",
+  //   description: "A full-stack news app for production use with authentication and authorization",
+  //   technologies: ["PHP", "Laravel", "MySQL", "Bootstrap", "Tailwind CSS", "JavaScript"],
+  //   imageUrl: image11,
+  //   liveUrl: "https://trustnews.press/",
+  //   githubUrl: "https://github.com"
+  // },
   {
     title: "Personal Business portfolio ",
     description: "A personal business portfolio website with a modern design and smooth animations",

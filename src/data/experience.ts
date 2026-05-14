@@ -5,7 +5,7 @@ export const experiences: Experience[] = [
      {
   company: "Roxnor, Dhaka, Bangladesh",
   position: "Software Developer (React.js)",
-  period: "January 2026 - Present",
+  period: "January 2026 - April 2026",
   description: [
     "Developing modern and scalable web applications using React.js, JavaScript, and TypeScript",
     

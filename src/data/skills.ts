@@ -36,10 +36,10 @@ export const skills: SkillCategory = {
       description: "Creative  CSS, animations, responsive design, and CSS-in-JS"
     },
     {
-      name: "Bootstrap",
-      level: 80,
-      description: "Modern CSS, animations, responsive design, and CSS-in-JS"
-    }
+  name: "Next.js",
+  level: 85, 
+  description: "Server-side rendering (SSR), Static Site Generation (SSG), App Router, and optimized performance for modern web apps."
+}
   ],
   Backend: [
     {

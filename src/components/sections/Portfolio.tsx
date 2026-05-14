@@ -87,7 +87,7 @@
 
 import { projects } from '../../data/projects';
 import { Github, Link, ExternalLink, Star, GitFork, Calendar } from 'lucide-react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {motion} from 'framer-motion';
 import { Star as StarIcon } from 'lucide-react';
 
@@ -266,7 +266,7 @@ export const Portfolio = () => {
         </div>
 
         {/* View More CTA */}
-        <div className="text-center mt-10 sm:mt-12">
+        {/* <div className="text-center mt-10 sm:mt-12">
           <a
             href="#contact"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white/5 border border-white/10 text-white font-medium hover:bg-indigo-500/20 hover:border-indigo-500/50 transition-all duration-300 hover:transform hover:-translate-y-0.5"
@@ -274,8 +274,14 @@ export const Portfolio = () => {
             <span>View All Projects</span>
             <ExternalLink className="w-4 h-4" />
           </a>
-        </div>
+        </div> */}
       </div>
     </section>
   );
 };
+
+
+
+
+
+    

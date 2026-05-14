@@ -174,7 +174,7 @@ export const Skills = () => {
                   </div>
                   
                   {/* Decorative Line */}
-                  <div className="mt-6 pt-4 border-t border-white/10">
+                  {/* <div className="mt-6 pt-4 border-t border-white/10">
                     <div className="flex items-center gap-2 text-xs text-gray-500">
                       <Clock className="w-3 h-3" />
                       <span>Daily driver</span>
@@ -183,7 +183,7 @@ export const Skills = () => {
                       <GitBranch className="w-3 h-3 ml-2" />
                       <span>Git versioned</span>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             );
