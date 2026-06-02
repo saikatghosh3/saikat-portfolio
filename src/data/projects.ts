@@ -7,14 +7,14 @@ import image2 from '../assets/Business.jpg';
 import image5 from '../assets/Healthcare.jpg.jpg';
 import image6 from '../assets/MovieApp.jpg.jpg';
 import image7 from '../assets/Universiy.jpg.jpg';
-import image8 from '../assets/Cartoon.jpeg';
+// import image8 from '../assets/Cartoon.jpeg';
 import image9 from '../assets/Expense-tracker.png';
 import image10 from '../assets/Arcabit.jpg';
-import image11 from '../assets/newsPaper.jpg';
+// import image11 from '../assets/newsPaper.jpg';
 import image12 from '../assets/BusinessPortfolio.jpg';
 import image13 from '../assets/ReactLandingPage.jpg';
 import image14 from '../assets/DeshiMango.png'
-
+import image15 from '../assets/E-commerce.jpg';
 
 export const projects: Project[] = [
   // {
@@ -65,12 +65,20 @@ export const projects: Project[] = [
     liveUrl: "https://desi-mango-fullstack.vercel.app",
     githubUrl: "https://github.com"
   },
+  // {
+  //   title: "University website",
+  //   description: "A responsive University website with a clean code and  design",
+  //   technologies: ["Html", "Css", "JavaScript",],
+  //   imageUrl: image7,
+  //   liveUrl: "https://university-website-responsive.vercel.app/",
+  //   githubUrl: "https://github.com"
+  // },
   {
-    title: "University website",
-    description: "A responsive University website with a clean code and  design",
-    technologies: ["Html", "Css", "JavaScript",],
-    imageUrl: image7,
-    liveUrl: "https://university-website-responsive.vercel.app/",
+    title: "E-commerce website",
+    description: "A responsive E-commerce  fullstack website with a clean code and  design",
+    technologies: ["Next.js", "Tailwind CSS", "MongoDB"],
+    imageUrl: image15,
+    liveUrl: "https://e-commerce-fullstack-ivory.vercel.app/",
     githubUrl: "https://github.com"
   },
   {
