@@ -89,14 +89,14 @@ export const projects: Project[] = [
     liveUrl: "https://expense-tracker-git-main-saikat-ghoshs-projects.vercel.app/",
     githubUrl: "https://github.com"
   },
-  {
-    title: "Arcabit",
-    description: "A responsive landing page website (Antivirus software) ",
-    technologies: ["Html", "css", "JavaScript"],
-    imageUrl: image10,
-    liveUrl: "https://arcabait-webstie.vercel.app/",
-    githubUrl: "https://github.com"
-  },
+  // {
+  //   title: "Arcabit",
+  //   description: "A responsive landing page website (Antivirus software) ",
+  //   technologies: ["Html", "css", "JavaScript"],
+  //   imageUrl: image10,
+  //   liveUrl: "https://arcabait-webstie.vercel.app/",
+  //   githubUrl: "https://github.com"
+  // },
   // {
   //   title: "News app",
   //   description: "A full-stack news app for production use with authentication and authorization",
