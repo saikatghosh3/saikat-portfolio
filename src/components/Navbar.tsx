@@ -92,7 +92,7 @@
 // };
 
 
-import { Menu, X, Code, Home, Briefcase, GraduationCap, Mail, BookOpen, Layers } from 'lucide-react';
+import { Menu, X, Code, Home, Briefcase, GraduationCap, Mail, BookOpen, Layers, Award } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -102,6 +102,7 @@ const navItems = [
   { label: 'Projects', href: '/portfolio', icon: Layers },
   { label: 'Experience', href: '/experience', icon: Briefcase },
   { label: 'Education', href: '/education', icon: GraduationCap },
+  { label: 'Certifications', href: '/certifications', icon: Award },
   { label: 'Contact', href: '/contact', icon: Mail },
 ];
 
@@ -189,7 +190,7 @@ export const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="lg:hidden absolute top-16 left-0 right-0 bg-slate-900/95 backdrop-blur-md border-b border-white/10 shadow-xl">
+        <div className="lg:hidden absolute top-16 left-0 right-0 bg-slate-900/95 backdrop-blur-md border-b border-white/10 shadow-xl max-h-[80vh] overflow-y-auto">
           <div className="max-w-7xl mx-auto px-4 py-4 space-y-2">
             {navItems.map((item) => {
               const Icon = item.icon;

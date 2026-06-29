@@ -100,12 +100,12 @@ export const ContactPage = () => {
                   href="mailto:saikat10ghosh@gmail.com"
                   className="flex items-center gap-4 p-3 rounded-xl hover:bg-white/5 transition-all duration-300 group/link"
                 >
-                  <div className="p-2 rounded-lg bg-indigo-500/10 group-hover/link:bg-indigo-500/20 transition-colors">
+                  <div className="p-2 rounded-lg bg-indigo-500/10 group-hover/link:bg-indigo-500/20 transition-colors shrink-0">
                     <Mail className="w-4 h-4 text-indigo-400" />
                   </div>
-                  <div>
+                  <div className="min-w-0 flex-1">
                     <p className="text-xs text-gray-400">Email</p>
-                    <p className="text-white text-sm group-hover/link:text-indigo-400 transition-colors">saikat10ghosh@gmail.com</p>
+                    <p className="text-white text-sm group-hover/link:text-indigo-400 transition-colors break-all">saikat10ghosh@gmail.com</p>
                   </div>
                 </a>
 
@@ -116,12 +116,12 @@ export const ContactPage = () => {
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 p-3 rounded-xl hover:bg-white/5 transition-all duration-300 group/link"
                 >
-                  <div className="p-2 rounded-lg bg-indigo-500/10 group-hover/link:bg-indigo-500/20 transition-colors">
+                  <div className="p-2 rounded-lg bg-indigo-500/10 group-hover/link:bg-indigo-500/20 transition-colors shrink-0">
                     <Linkedin className="w-4 h-4 text-indigo-400" />
                   </div>
-                  <div>
+                  <div className="min-w-0 flex-1">
                     <p className="text-xs text-gray-400">LinkedIn</p>
-                    <p className="text-white text-sm group-hover/link:text-indigo-400 transition-colors">Connect with me</p>
+                    <p className="text-white text-sm group-hover/link:text-indigo-400 transition-colors truncate">Connect with me</p>
                   </div>
                 </a>
 
@@ -132,21 +132,21 @@ export const ContactPage = () => {
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 p-3 rounded-xl hover:bg-white/5 transition-all duration-300 group/link"
                 >
-                  <div className="p-2 rounded-lg bg-indigo-500/10 group-hover/link:bg-indigo-500/20 transition-colors">
+                  <div className="p-2 rounded-lg bg-indigo-500/10 group-hover/link:bg-indigo-500/20 transition-colors shrink-0">
                     <Github className="w-4 h-4 text-indigo-400" />
                   </div>
-                  <div>
+                  <div className="min-w-0 flex-1">
                     <p className="text-xs text-gray-400">GitHub</p>
-                    <p className="text-white text-sm group-hover/link:text-indigo-400 transition-colors">View my work</p>
+                    <p className="text-white text-sm group-hover/link:text-indigo-400 transition-colors truncate">View my work</p>
                   </div>
                 </a>
 
                 {/* Location */}
                 <div className="flex items-center gap-4 p-3 rounded-xl">
-                  <div className="p-2 rounded-lg bg-indigo-500/10">
+                  <div className="p-2 rounded-lg bg-indigo-500/10 shrink-0">
                     <MapPin className="w-4 h-4 text-indigo-400" />
                   </div>
-                  <div>
+                  <div className="min-w-0 flex-1">
                     <p className="text-xs text-gray-400">Location</p>
                     <p className="text-white text-sm">Dhaka, Bangladesh</p>
                   </div>

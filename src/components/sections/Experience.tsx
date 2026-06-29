@@ -72,23 +72,23 @@ export const Experience = () => {
         {/* Timeline Container */}
         <div className="relative">
           {/* Timeline Line */}
-          <div className="absolute left-0 md:left-1/2 transform md:-translate-x-px h-full w-px bg-gradient-to-b from-indigo-500/50 via-purple-500/50 to-transparent" />
+          <div className="absolute left-6 md:left-1/2 transform md:-translate-x-px h-full w-px bg-gradient-to-b from-indigo-500/50 via-purple-500/50 to-transparent" />
 
           {/* Experience Items */}
           <div className="space-y-8 sm:space-y-10">
             {experiences.map((exp, index) => (
               <div
                 key={exp.company}
-                className={`relative flex flex-col md:flex-row gap-6 md:gap-8 group ${
+                className={`relative flex flex-col md:flex-row md:gap-8 group ${
                   index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
                 }`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {/* Timeline Dot */}
-                <div className="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-indigo-500 border-4 border-slate-900 z-10 mt-1" />
+                <div className="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-indigo-500 border-4 border-slate-900 z-10 mt-1" />
                 
                 {/* Content Card */}
-                <div className={`w-full md:w-[calc(50%-2rem)] ${
+                <div className={`pl-14 md:pl-0 w-full md:w-[calc(50%-2rem)] ${
                   index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'
                 }`}>
                   <div className="group/card relative backdrop-blur-sm bg-white/5 rounded-2xl border border-white/10 overflow-hidden hover:border-indigo-500/50 transition-all duration-500 hover:transform hover:-translate-y-1">

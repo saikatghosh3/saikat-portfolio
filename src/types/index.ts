@@ -22,6 +22,15 @@ export interface Education {
   description: string[];
 }
 
+export interface Certification {
+  title: string;
+  issuer: string;
+  date: string;
+  description: string;
+  imageUrl?: string;
+  credentialUrl?: string;
+}
+
 export interface ContactFormData {
   name: string;
   email: string;

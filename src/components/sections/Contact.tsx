@@ -118,9 +118,9 @@ export const Contact = () => {
                     <div className="p-2 rounded-lg bg-indigo-500/10 group-hover/link:bg-indigo-500/20 transition-colors">
                       <Mail className="w-5 h-5 text-indigo-400" />
                     </div>
-                    <div>
-                      <p className="text-sm text-gray-400">Email</p>
-                      <p className="text-white group-hover/link:text-indigo-400 transition-colors">saikat10ghosh@gmail.com</p>
+                    <div className="min-w-0 flex-1">
+                      <p className="text-xs sm:text-sm text-gray-400">Email</p>
+                      <p className="text-white group-hover/link:text-indigo-400 transition-colors text-sm break-all">saikat10ghosh@gmail.com</p>
                     </div>
                   </a>
 
@@ -133,9 +133,9 @@ export const Contact = () => {
                     <div className="p-2 rounded-lg bg-indigo-500/10 group-hover/link:bg-indigo-500/20 transition-colors">
                       <Linkedin className="w-5 h-5 text-indigo-400" />
                     </div>
-                    <div>
-                      <p className="text-sm text-gray-400">LinkedIn</p>
-                      <p className="text-white group-hover/link:text-indigo-400 transition-colors">Connect with me</p>
+                    <div className="min-w-0 flex-1">
+                      <p className="text-xs sm:text-sm text-gray-400">LinkedIn</p>
+                      <p className="text-white group-hover/link:text-indigo-400 transition-colors text-sm truncate">Connect with me</p>
                     </div>
                   </a>
 
@@ -148,9 +148,9 @@ export const Contact = () => {
                     <div className="p-2 rounded-lg bg-indigo-500/10 group-hover/link:bg-indigo-500/20 transition-colors">
                       <Github className="w-5 h-5 text-indigo-400" />
                     </div>
-                    <div>
-                      <p className="text-sm text-gray-400">GitHub</p>
-                      <p className="text-white group-hover/link:text-indigo-400 transition-colors">View my work</p>
+                    <div className="min-w-0 flex-1">
+                      <p className="text-xs sm:text-sm text-gray-400">GitHub</p>
+                      <p className="text-white group-hover/link:text-indigo-400 transition-colors text-sm truncate">View my work</p>
                     </div>
                   </a>
 
@@ -158,9 +158,9 @@ export const Contact = () => {
                     <div className="p-2 rounded-lg bg-indigo-500/10">
                       <MapPin className="w-5 h-5 text-indigo-400" />
                     </div>
-                    <div>
-                      <p className="text-sm text-gray-400">Location</p>
-                      <p className="text-white">Dhaka, Bangladesh</p>
+                    <div className="min-w-0 flex-1">
+                      <p className="text-xs sm:text-sm text-gray-400">Location</p>
+                      <p className="text-white text-sm">Dhaka, Bangladesh</p>
                     </div>
                   </div>
                 </div>

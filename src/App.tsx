@@ -9,6 +9,7 @@ import { PortfolioPage } from './pages/PortfolioPage';
 import { ExperiencePage } from './pages/ExperiencePage';
 import { ContactPage } from './pages/ContactPage';
 import { EducationPage} from './pages/EducationPage';
+import { CertificationsPage } from './pages/CertificationsPage';
 
 
 export function App() {
@@ -23,6 +24,7 @@ export function App() {
           <Route path="/portfolio" element={<PortfolioPage />} />
           <Route path="/experience" element={<ExperiencePage />} />
           <Route path="/education" element={<EducationPage />} />
+          <Route path="/certifications" element={<CertificationsPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
         <Footer />
