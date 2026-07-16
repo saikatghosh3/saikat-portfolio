@@ -1,79 +1,3 @@
-// import { FileDown, Eye } from 'lucide-react';
-// import { useState } from 'react';
-
-// export const CVDownload = () => {
-//   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
-
-//   const handleDownload = () => {
-//     // Replace with your actual CV file URL
-//     // const cvUrl = 'https://drive.google.com/file/d/15IyCzJW29r-QqOZZYpzluifSqfw_SsHG/view?usp=sharing';
-//     const cvUrl = 'https://drive.google.com/file/d/1wcHphxL-q_6GPMn1rauDZuMBxSJvK0om/view?usp=sharing';
-//     const link = document.createElement('a');
-//     link.href = cvUrl;
-//     link.download = 'Saikat Ghosh-CV.pdf';
-//     document.body.appendChild(link);
-//     link.click();
-//     document.body.removeChild(link);
-//   };
-
-//   return (
-//     <section className="py-20 bg-[#30121B]">
-//       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-//         <div className="card p-8 rounded-3xl shadow-2xl bg-white/10 border border-white/10 backdrop-blur-xl">
-//           <div className="text-center mb-8">
-//             <h2 className="text-3xl font-bold text-white mb-4">Download My CV</h2>
-//             <p className="text-gray-300">
-//               Get a detailed overview of my skills, experience, and qualifications
-//             </p>
-//           </div>
-
-//           <div className="flex flex-col sm:flex-row justify-center gap-4">
-//             <button
-//               onClick={handleDownload}
-//               className="btn-primary flex items-center justify-center gap-2 group"
-//             >
-//               <FileDown className="w-5 h-5 group-hover:animate-bounce" />
-//               Download CV
-//             </button>
-//             <button
-//               onClick={() => setIsPreviewOpen(!isPreviewOpen)}
-//               className="btn-outline flex items-center justify-center gap-2"
-//             >
-//               <Eye className="w-5 h-5" />
-//               Quick Preview
-//             </button>
-//           </div>
-
-//           {isPreviewOpen && (
-//             <div className="mt-8 p-6 border rounded-lgbg-[#30121B] dark:bg-gray-700 animate-fade-in">
-//               <h3 className="font-semibold mb-4">CV Highlights</h3>
-//               <div className="space-y-4">
-//                 <div>
-//                   <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400">Latest Position</h4>
-//                   <p className="text-indigo-600 dark:text-indigo-400">Software Engineer(React.js) at Roxnor,Dhaka,Bangladesh.</p>
-//                 </div>
-//                 <div>
-//                   <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400">Education</h4>
-//                   <p>Bachelors of Technology  in  computer science and engineering - Jawaharlal Nehru Technological University Anantapur</p>
-//                 </div>
-//                 <div>
-//                   <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400">Key Skills</h4>
-//                   <div className="flex flex-wrap gap-2 mt-1">
-//                     {[ 'JavaScript','React', 'TypeScript', 'Node.js', 'Tailwind CSS', 'Bootstrp', 'Express.js', 'MySql', 'Php', 'Laravel'].map((skill) => (
-//                       <span key={skill} className="skill-tag">
-//                         {skill}
-//                       </span>
-//                     ))}
-//                   </div>
-//                 </div>
-//               </div>
-//             </div>
-//           )}
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
 
 
 import { FileDown, Eye, Download, FileText, Award, GraduationCap, Code2, X } from 'lucide-react';
@@ -83,7 +7,7 @@ export const CVDownload = () => {
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
 
   const handleDownload = () => {
-    const cvUrl = 'https://drive.google.com/file/d/1wcHphxL-q_6GPMn1rauDZuMBxSJvK0om/view?usp=sharing';
+    const cvUrl = 'https://drive.google.com/file/d/1sHb79YX0QVy_xRDLalwm3rDQmrwNQeXO/view?usp=sharing';
     const link = document.createElement('a');
     link.href = cvUrl;
     link.download = 'Saikat Ghosh-CV.pdf';
