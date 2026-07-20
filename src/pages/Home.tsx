@@ -13,7 +13,7 @@ export const Home = () => {
       <Skills />
       <Portfolio />
       <Experience />
-      <Certifications />
+      <Certifications preview />
       <CVDownload />
       <Contact />
     </main>

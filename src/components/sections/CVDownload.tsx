@@ -148,9 +148,7 @@ export const CVDownload = () => {
 
         {/* File Format Info */}
         <div className="text-center mt-8">
-          <p className="text-xs text-gray-500">
-            PDF format • Last updated: December 2024 • Size: ~250KB
-          </p>
+        
         </div>
       </div>
     </section>

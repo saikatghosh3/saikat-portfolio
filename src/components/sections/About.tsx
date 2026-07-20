@@ -83,9 +83,12 @@ const [loopCount, setLoopCount] = useState(0);
 
  
 useEffect(() => {
-  if (loopCount >= 25) return; 
+  if (loopCount >= 25) {
+    setDisplayText(text);
+    return;
+  }
 
- let timeout: any;
+  let timeout: any;
 
   if (!isDeleting && index < text.length) {
     timeout = setTimeout(() => {
@@ -104,7 +107,7 @@ useEffect(() => {
   } 
   else if (index === 0 && isDeleting) {
     setIsDeleting(false);
-    setLoopCount((prev) => prev + 1); // ✅ count loop
+    setLoopCount((prev) => prev + 1);
   }
 
   return () => clearTimeout(timeout);

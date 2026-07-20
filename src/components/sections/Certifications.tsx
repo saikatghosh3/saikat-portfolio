@@ -1,10 +1,15 @@
 import { certifications } from '../../data/certifications';
-import { Award, ExternalLink, Calendar, X } from 'lucide-react';
+import { Award, ExternalLink, Calendar, X, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import type { Certification } from '../../types';
 
-export const Certifications = () => {
+interface CertificationsProps {
+  preview?: boolean;
+}
+
+export const Certifications = ({ preview = false }: CertificationsProps) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [selectedCert, setSelectedCert] = useState<Certification | null>(null);
 
@@ -25,7 +30,7 @@ export const Certifications = () => {
           </div>
           <div className="w-fit mx-auto mb-8">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2 text-center">
-              Licenses & Certifications
+              Certifications
             </h2>
             <motion.div
               initial={{ width: 0 }}
@@ -39,73 +44,85 @@ export const Certifications = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
-          {certifications.map((cert, index) => (
-            <div
-              key={cert.title}
-              className="group relative cursor-pointer"
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
-              onClick={() => cert.imageUrl && setSelectedCert(cert)}
+        {preview ? (
+          <div className="flex flex-col items-center">
+            <Link
+              to="/certifications"
+              className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-medium hover:shadow-lg hover:shadow-indigo-500/25 transition-all duration-300 hover:scale-105"
             >
-              <div className={`absolute inset-0 rounded-2xl bg-gradient-to-r from-indigo-500 to-purple-500 opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-md -z-10 ${hoveredIndex === index ? 'opacity-20' : ''}`} />
+              View All Certifications
+              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </Link>
+          </div>
+        ) : (
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
+            {certifications.map((cert, index) => (
+              <div
+                key={cert.title}
+                className="group relative cursor-pointer"
+                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseLeave={() => setHoveredIndex(null)}
+                onClick={() => cert.imageUrl && setSelectedCert(cert)}
+              >
+                <div className={`absolute inset-0 rounded-2xl bg-gradient-to-r from-indigo-500 to-purple-500 opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-md -z-10 ${hoveredIndex === index ? 'opacity-20' : ''}`} />
 
-              <div className="relative backdrop-blur-sm bg-white/5 rounded-2xl border border-white/10 overflow-hidden hover:border-white/20 transition-all duration-500 h-full flex flex-col">
-                <div className="relative h-56 lg:h-64 bg-gradient-to-br from-indigo-500/10 to-purple-500/10 flex items-center justify-center shrink-0">
-                  {cert.imageUrl ? (
-                    <img
-                      src={cert.imageUrl}
-                      alt={cert.title}
-                      className="w-full h-full object-contain p-4 transition-transform duration-700 group-hover:scale-110"
-                    />
-                  ) : (
-                    <div className="flex flex-col items-center gap-3 text-gray-500">
-                      <Award className="w-16 h-16 text-indigo-400/30" />
-                      <span className="text-sm text-gray-600">Certificate image coming soon</span>
+                <div className="relative backdrop-blur-sm bg-white/5 rounded-2xl border border-white/10 overflow-hidden hover:border-white/20 transition-all duration-500 h-full flex flex-col">
+                  <div className="relative h-56 lg:h-64 bg-gradient-to-br from-indigo-500/10 to-purple-500/10 flex items-center justify-center shrink-0">
+                    {cert.imageUrl ? (
+                      <img
+                        src={cert.imageUrl}
+                        alt={cert.title}
+                        className="w-full h-full object-contain p-4 transition-transform duration-700 group-hover:scale-110"
+                      />
+                    ) : (
+                      <div className="flex flex-col items-center gap-3 text-gray-500">
+                        <Award className="w-16 h-16 text-indigo-400/30" />
+                        <span className="text-sm text-gray-600">Certificate image coming soon</span>
+                      </div>
+                    )}
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60" />
+
+                    <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/50 backdrop-blur-sm border border-white/20">
+                      <span className="text-xs font-medium text-white">Certification</span>
                     </div>
-                  )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60" />
 
-                  <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/50 backdrop-blur-sm border border-white/20">
-                    <span className="text-xs font-medium text-white">Certification</span>
+                    {cert.credentialUrl && (
+                      <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
+                        <a
+                          href={cert.credentialUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          className="p-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-indigo-500 hover:border-indigo-500 transition-all duration-300 transform hover:scale-110"
+                        >
+                          <ExternalLink className="w-5 h-5 text-white" />
+                        </a>
+                      </div>
+                    )}
                   </div>
 
-                  {cert.credentialUrl && (
-                    <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
-                      <a
-                        href={cert.credentialUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={(e) => e.stopPropagation()}
-                        className="p-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-indigo-500 hover:border-indigo-500 transition-all duration-300 transform hover:scale-110"
-                      >
-                        <ExternalLink className="w-5 h-5 text-white" />
-                      </a>
+                  <div className="p-6 lg:p-8 flex-1">
+                    <div className="flex items-start justify-between mb-3">
+                      <h3 className="text-xl lg:text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-indigo-400 group-hover:to-purple-400 transition-all duration-300">
+                        {cert.title}
+                      </h3>
                     </div>
-                  )}
-                </div>
 
-                <div className="p-6 lg:p-8 flex-1">
-                  <div className="flex items-start justify-between mb-3">
-                    <h3 className="text-xl lg:text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-indigo-400 group-hover:to-purple-400 transition-all duration-300">
-                      {cert.title}
-                    </h3>
-                  </div>
+                    <p className="text-indigo-400 font-medium text-sm mb-3">{cert.issuer}</p>
+                    <p className="text-gray-400 text-sm lg:text-base leading-relaxed mb-4">
+                      {cert.description}
+                    </p>
 
-                  <p className="text-indigo-400 font-medium text-sm mb-3">{cert.issuer}</p>
-                  <p className="text-gray-400 text-sm lg:text-base leading-relaxed mb-4">
-                    {cert.description}
-                  </p>
-
-                  <div className="flex items-center gap-2 text-xs text-gray-500">
-                    <Calendar className="w-3 h-3" />
-                    <span>Issued: {cert.date}</span>
+                    <div className="flex items-center gap-2 text-xs text-gray-500">
+                      <Calendar className="w-3 h-3" />
+                      <span>Issued: {cert.date}</span>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
       </div>
     </section>
 
