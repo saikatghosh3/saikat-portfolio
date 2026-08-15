@@ -1,56 +1,8 @@
-// import image1 from '../../assets/Saikat.jpg';
-
-
-// export const About = () => {
-//   return (
-//     <section id="about" className="min-h-screen flex items-center justify-center py-20">
-//       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-//         <h2 className="text-3xl font-bold text-center mb-8 text-white animate-fade-in">About Me</h2>
-//         <div className="grid md:grid-cols-2 gap-8 items-center">
-//           <div className="space-y-4 animate-slide-in-left">
-//             <div className="glass-card p-6">
-//               <p className="text-white">
-//                 Hi! I'm a passionate Frontend Developer with expertise in building modern web applications
-//                 using React, TypeScript, next.js, MUI, taiwindcss and other cutting-edge technologies.
-//               </p>
-//               <p className="text-lg text-white mt-4">
-//                 With a strong foundation in web development and a keen eye for design, I create
-//                 responsive and user-friendly interfaces that deliver exceptional user experiences.
-//               </p>
-//             </div>
-//           </div>
-//           {/* <div className="animate-slide-in-right">
-//             <div className="glass-card p-2">
-//               <img
-//                 src={image1}
-//                 alt="Frontend  developer"
-//                 className="rounded-lg"
-//               />
-//             </div>
-//           </div> */}
-
-// <div className="animate-slide-in-right">
-//   <div className="glass-card p-2 glow-effect">
-//     <img
-//       src={image1}
-//       alt="Frontend developer"
-//       className="rounded-lg"
-//     />
-//   </div>
-// </div>
-
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-
 import image1 from '../../assets/Saikat.jpg';
-import { Code2, Sparkles, Rocket, Zap } from 'lucide-react';
+import { Code2, Sparkles, Rocket, Zap, ArrowRight, Mail } from 'lucide-react';
 import { useEffect, useState } from "react";
-import { motion } from 'framer-motion';
-
+import { Link } from 'react-router-dom';
+import { Earth } from '../Earth';
 
 export const About = () => {
   const highlights = [
@@ -88,7 +40,7 @@ useEffect(() => {
     return;
   }
 
-  let timeout: any;
+  let timeout: ReturnType<typeof setTimeout>;
 
   if (!isDeleting && index < text.length) {
     timeout = setTimeout(() => {
@@ -114,89 +66,121 @@ useEffect(() => {
 }, [index, isDeleting, loopCount]);
 
   return (
-    <section id="about" className="relative py-16 sm:py-20 overflow-hidden">
-      {/* Background Gradient */}
+    <section id="about" className="relative min-h-screen flex items-center overflow-hidden pt-24 pb-16 sm:pb-20">
+      {/* Background - Matching other sections */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-indigo-500/10 via-transparent to-transparent" />
-      
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center mb-10 sm:mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 mb-4">
-            <span className="text-indigo-400 text-xs font-medium">GET TO KNOW ME</span>
-          </div>
-         <div className="w-fit mx-auto mb-8">
-  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2 text-center">
-    About Me
-  </h2>
-  <motion.div
-    initial={{ width: 0 }}
-    animate={{ width: '100%' }}
-    transition={{ duration: 0.6, ease: 'easeInOut' }}
-    className="h-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full"
-  />
-</div>
-        </div>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-500/5 via-transparent to-transparent" />
 
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+      {/* Animated Background Orbs */}
+      <div className="absolute top-1/3 -left-48 w-96 h-96 bg-indigo-500/5 rounded-full blur-2xl animate-pulse" />
+      <div className="absolute bottom-1/3 -right-48 w-96 h-96 bg-purple-500/5 rounded-full blur-2xl animate-pulse delay-1000" />
+
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-12 items-center">
           {/* Left Column - Content */}
-          <div className="space-y-8">
-            <div className="backdrop-blur-sm bg-white/5 rounded-2xl p-6 sm:p-8 border border-white/10 shadow-xl">
-              <p className="text-gray-200 text-base sm:text-lg leading-relaxed">
-                   {displayText}
-            <span className="animate-pulse">|</span>
-             <br />
-                 a passionate <span className="text-indigo-400 font-semibold">Frontend Developer</span> 
-                with expertise in building modern web applications using React, TypeScript, Next.js, 
-                MUI, TailwindCSS, and other cutting-edge technologies.
-              </p>
-              <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent my-6" />
-              <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
-                With a strong foundation in web development and a keen eye for design, I create 
-                responsive and user-friendly interfaces that deliver exceptional user experiences. 
-                I believe in writing clean, maintainable code that scales beautifully.
-              </p>
+          <div className="text-center lg:text-left">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 mb-5">
+              <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse" />
+              <span className="text-indigo-400 text-xs font-medium tracking-wider">GET TO KNOW ME</span>
+            </div>
+
+            {/* Typewriter Heading */}
+            <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold text-white leading-tight">
+              {displayText}
+              <span className="text-indigo-400 animate-pulse">|</span>
+            </h1>
+
+            {/* Role */}
+            <p className="mt-4 text-base sm:text-lg text-gray-300 max-w-xl mx-auto lg:mx-0">
+              a passionate{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400 font-semibold">
+                Frontend Developer
+              </span>{" "}
+              with expertise in building modern web applications using React, TypeScript, Next.js,
+              MUI, TailwindCSS, and other cutting-edge technologies.
+            </p>
+
+            {/* Description */}
+            <p className="mt-4 text-gray-400 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+              With a strong foundation in web development and a keen eye for design, I create
+              responsive and user-friendly interfaces that deliver exceptional user experiences.
+              I believe in writing clean, maintainable code that scales beautifully.
+            </p>
+
+            {/* CTA Buttons */}
+            <div className="mt-8 flex flex-wrap justify-center lg:justify-start gap-4">
+              <Link
+                to="/portfolio"
+                className="group flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500 text-white text-sm font-semibold shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:-translate-y-0.5 transition-all duration-300"
+              >
+                View My Work
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+              </Link>
+              <Link
+                to="/contact"
+                className="flex items-center gap-2 px-6 py-3 rounded-xl bg-white/5 border border-white/15 text-gray-200 text-sm font-semibold hover:bg-indigo-500/10 hover:border-indigo-500/50 hover:text-white transition-all duration-300"
+              >
+                <Mail className="w-4 h-4" />
+                Contact Me
+              </Link>
             </div>
 
             {/* Highlights Grid */}
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-3.5 max-w-xl mx-auto lg:mx-0 text-left">
               {highlights.map((item, index) => (
                 <div
                   key={index}
-                  className="group backdrop-blur-sm bg-white/5 rounded-xl p-4 border border-white/10 hover:border-indigo-500/50 transition-all duration-300 hover:transform hover:scale-105"
+                  className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-3.5 hover:border-indigo-500/50 hover:bg-white/[0.08] transition-all duration-300"
                 >
-                  <div className="flex items-start gap-3">
-                    <div className="p-2 rounded-lg bg-indigo-500/10 group-hover:bg-indigo-500/15 transition-colors">
-                      <item.icon className="w-5 h-5 text-indigo-400" />
-                    </div>
-                    <div>
-                      <h3 className="text-white font-semibold text-sm mb-1">{item.title}</h3>
-                      <p className="text-gray-400 text-xs">{item.description}</p>
-                    </div>
+                  <div className="p-2 rounded-lg bg-indigo-500/10 group-hover:bg-indigo-500/20 transition-colors">
+                    <item.icon className="w-5 h-5 text-indigo-400" />
+                  </div>
+                  <div className="min-w-0">
+                    <h3 className="text-white font-semibold text-sm">{item.title}</h3>
+                    <p className="text-gray-400 text-xs truncate">{item.description}</p>
                   </div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Right Column - Image */}
-          <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500 to-purple-500 rounded-2xl blur-lg opacity-10 group-hover:opacity-15 transition-opacity" />
-            <div className="relative backdrop-blur-sm bg-gradient-to-br from-white/10 to-white/5 rounded-2xl p-2 border border-white/20 shadow-xl">
-              <div className="relative overflow-hidden rounded-xl">
-                <img
-                  src={image1}
-                  alt="Frontend Developer"
-                  className="w-full h-auto object-cover transform transition-transform duration-700 hover:scale-105"
-                />
-                {/* Overlay Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-indigo-950/50 via-transparent to-transparent" />
+          {/* Right Column - Visual */}
+          <div className="relative flex justify-center lg:justify-start">
+            <div className="relative w-[260px] sm:w-[300px] lg:w-[340px]">
+              {/* 3D Globe Background */}
+              <div className="absolute -top-16 -right-12 sm:-right-16 w-72 sm:w-80 lg:w-[380px] opacity-70 pointer-events-none select-none">
+                <Earth dark={1} />
+              </div>
+
+              {/* Glow Behind Portrait */}
+              <div className="absolute -inset-4 rounded-full bg-gradient-to-br from-indigo-500/40 to-purple-500/30 blur-2xl" />
+
+              {/* Portrait */}
+              <div className="relative rounded-full bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 p-[3px] shadow-2xl shadow-indigo-500/30">
+                <div className="relative rounded-full overflow-hidden bg-slate-900 aspect-square">
+                  <img
+                    src={image1}
+                    alt="Frontend Developer"
+                    className="w-full h-full object-cover"
+                  />
+                  {/* Overlay Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-indigo-950/40 via-transparent to-transparent" />
+                </div>
+              </div>
+
+              {/* Floating Badge - Tech Stack */}
+              <div className="absolute -left-6 bottom-8 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 shadow-lg">
+                <p className="text-[10px] text-gray-300 uppercase tracking-wide">Crafting with</p>
+                <p className="text-sm font-semibold text-white">React & TypeScript</p>
+              </div>
+
+              {/* Floating Badge - Status */}
+              <div className="absolute -right-4 top-10 rounded-full bg-emerald-500/15 border border-emerald-400/40 backdrop-blur-md px-4 py-1.5 flex items-center gap-2 shadow-lg">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="text-xs font-medium text-emerald-300">Open to work</span>
               </div>
             </div>
-            
-            {/* Decorative Elements */}
-            <div className="absolute -bottom-4 -left-4 w-20 h-20 bg-indigo-500/10 rounded-full blur-lg" />
-            <div className="absolute -top-4 -right-4 w-24 h-24 bg-purple-500/10 rounded-full blur-lg" />
           </div>
         </div>
       </div>
