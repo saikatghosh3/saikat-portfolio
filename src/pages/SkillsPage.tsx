@@ -93,7 +93,7 @@ export const SkillsPage = () => {
             <span className="text-indigo-400 text-xs font-medium">TECHNICAL EXPERTISE</span>
           </div>
        <div className="w-fit mx-auto mb-8">
-  <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2 text-center">
+  <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 text-center">
     My Skills & Expertise
   </h1>
   <motion.div

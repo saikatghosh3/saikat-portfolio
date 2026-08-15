@@ -46,8 +46,10 @@
 //   );
 // };
 
-import { Code2, Palette, Wrench, TestTube2, Sparkles, Shield, Clock, GitBranch } from 'lucide-react';
+import { Code2, Palette, Wrench, TestTube2, Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useRef } from 'react';
+import { AnimatedBeam, Circle, Icons } from '../ui/animated-beam';
 
 const skills = [
   {
@@ -84,6 +86,15 @@ const categoryColors = {
 };
 
 export const Skills = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const div1Ref = useRef<HTMLDivElement>(null);
+  const div2Ref = useRef<HTMLDivElement>(null);
+  const div3Ref = useRef<HTMLDivElement>(null);
+  const div4Ref = useRef<HTMLDivElement>(null);
+  const div5Ref = useRef<HTMLDivElement>(null);
+  const div6Ref = useRef<HTMLDivElement>(null);
+  const div7Ref = useRef<HTMLDivElement>(null);
+
   return (
     <section id="skills" className="relative py-16 sm:py-20 overflow-hidden">
       {/* Background */}
@@ -102,7 +113,7 @@ export const Skills = () => {
             <span className="text-indigo-400 text-xs font-medium">MY EXPERTISE</span>
           </div>
        <div className="w-fit mx-auto mb-8">
-  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2 text-center">
+  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 text-center">
     Technical Skills
   </h2>
   <motion.div
@@ -117,8 +128,118 @@ export const Skills = () => {
           </p>
         </div>
 
+        {/* Animated Beam Showcase */}
+        <div
+          ref={containerRef}
+          className="relative mx-auto max-w-2xl lg:max-w-3xl rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm px-3 py-5 sm:px-6 sm:py-8 lg:px-10 lg:py-10 overflow-hidden"
+        >
+          {/* Center Glow */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-44 h-44 bg-indigo-500/20 rounded-full blur-2xl" />
+
+          <div className="relative flex h-[290px] sm:h-[330px] items-stretch justify-between gap-2 sm:gap-8">
+            {/* Left Column - User */}
+            <div className="flex flex-col justify-center">
+              <Circle ref={div7Ref} className="h-11 w-11 sm:h-12 sm:w-12">
+                <Icons.user className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
+              </Circle>
+            </div>
+
+            {/* Center Hub - Skills */}
+            <div className="flex flex-col justify-center">
+              <div
+                ref={div6Ref}
+                className="z-10 flex h-20 w-20 sm:h-24 sm:w-24 items-center justify-center rounded-full border-2 border-indigo-400/40 bg-slate-900/90 shadow-[0_0_40px_-10px_rgba(129,140,248,0.9)]"
+              >
+                <span className="text-[11px] sm:text-sm font-extrabold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">
+                  Skills
+                </span>
+              </div>
+            </div>
+
+            {/* Right Column - Skill Logos */}
+            <div className="flex flex-col justify-center gap-3 sm:gap-4">
+              <Circle ref={div1Ref} className="h-11 w-11 sm:h-12 sm:w-12 p-2">
+                <Icons.typescript className="h-5 w-5 sm:h-6 sm:w-6" />
+              </Circle>
+              <Circle ref={div2Ref} className="h-11 w-11 sm:h-12 sm:w-12 p-2">
+                <Icons.tailwindcss className="h-5 w-5 sm:h-6 sm:w-6" />
+              </Circle>
+              <Circle ref={div3Ref} className="h-11 w-11 sm:h-12 sm:w-12 p-2">
+                <Icons.nextjs className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
+              </Circle>
+              <Circle ref={div4Ref} className="h-11 w-11 sm:h-12 sm:w-12 p-2">
+                <Icons.reactjs className="h-5 w-5 sm:h-6 sm:w-6" />
+              </Circle>
+              <Circle ref={div5Ref} className="h-11 w-11 sm:h-12 sm:w-12 p-2">
+                <Icons.framer className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
+              </Circle>
+            </div>
+          </div>
+
+          {/* Animated Beams - light travels from branches to hub */}
+          <AnimatedBeam
+            containerRef={containerRef}
+            fromRef={div1Ref}
+            toRef={div6Ref}
+            duration={3}
+            delay={0}
+            curvature={24}
+            gradientStartColor="#f97316"
+            gradientStopColor="#f59e0b"
+          />
+          <AnimatedBeam
+            containerRef={containerRef}
+            fromRef={div2Ref}
+            toRef={div6Ref}
+            duration={3}
+            delay={0.5}
+            curvature={-24}
+            gradientStartColor="#06b6d4"
+            gradientStopColor="#3b82f6"
+          />
+          <AnimatedBeam
+            containerRef={containerRef}
+            fromRef={div3Ref}
+            toRef={div6Ref}
+            duration={3}
+            delay={1}
+            curvature={24}
+            gradientStartColor="#22d3ee"
+            gradientStopColor="#38bdf8"
+          />
+          <AnimatedBeam
+            containerRef={containerRef}
+            fromRef={div4Ref}
+            toRef={div6Ref}
+            duration={3}
+            delay={1.5}
+            curvature={-24}
+            gradientStartColor="#61dafb"
+            gradientStopColor="#38bdf8"
+          />
+          <AnimatedBeam
+            containerRef={containerRef}
+            fromRef={div5Ref}
+            toRef={div6Ref}
+            duration={3}
+            delay={2}
+            curvature={24}
+            gradientStartColor="#d948ae"
+            gradientStopColor="#8b5cf6"
+          />
+          <AnimatedBeam
+            containerRef={containerRef}
+            fromRef={div6Ref}
+            toRef={div7Ref}
+            duration={3}
+            delay={2.5}
+            gradientStartColor="#818cf8"
+            gradientStopColor="#c084fc"
+          />
+        </div>
+
         {/* Skills Grid */}
-        <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+        <div className="mt-14 grid md:grid-cols-2 gap-6 lg:gap-8">
           {skills.map((skillGroup, index) => {
             const Icon = skillGroup.icon;
             const gradient = categoryColors[skillGroup.category as keyof typeof categoryColors];
@@ -172,25 +293,11 @@ export const Skills = () => {
                       </span>
                     ))}
                   </div>
-                  
-                  {/* Decorative Line */}
-                  {/* <div className="mt-6 pt-4 border-t border-white/10">
-                    <div className="flex items-center gap-2 text-xs text-gray-500">
-                      <Clock className="w-3 h-3" />
-                      <span>Daily driver</span>
-                      <Shield className="w-3 h-3 ml-2" />
-                      <span>Production ready</span>
-                      <GitBranch className="w-3 h-3 ml-2" />
-                      <span>Git versioned</span>
-                    </div>
-                  </div> */}
                 </div>
               </div>
             );
           })}
         </div>
-
-
       </div>
     </section>
   );

@@ -60,7 +60,7 @@ export const Experience = () => {
             <Briefcase className="w-3 h-3 text-indigo-400" />
             <span className="text-indigo-400 text-xs font-medium">WORK HISTORY</span>
           </div>
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Professional Experience
           </h2>
           <div className="h-1 w-20 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full mx-auto" />

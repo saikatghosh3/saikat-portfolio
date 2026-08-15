@@ -67,7 +67,7 @@ export const ContactPage = () => {
             <Mail className="w-3 h-3 text-indigo-400" />
             <span className="text-indigo-400 text-xs font-medium">LET'S CONNECT</span>
           </div>
-          <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+          <h1 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Get In Touch
           </h1>
           <motion.div

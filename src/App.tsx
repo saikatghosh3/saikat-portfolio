@@ -1,5 +1,8 @@
+import { useEffect, useState } from 'react';
+import { AnimatePresence } from 'framer-motion';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
+import { Loader } from './components/Loader';
 import { Footer } from './components/Footer';
 import { ScrollToTop } from './components/ScrollToTop';
 import { ScrollToTop1 } from './components/ScrollToTop1';
@@ -13,9 +16,17 @@ import { CertificationsPage } from './pages/CertificationsPage';
 
 
 export function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 2600);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <Router>
       <div className="min-h-screen animated-gradient">
+        <AnimatePresence>{loading && <Loader />}</AnimatePresence>
         <Navbar />
         <ScrollToTop1 />
         <Routes>

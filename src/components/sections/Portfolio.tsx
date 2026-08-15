@@ -111,7 +111,7 @@ export const Portfolio = () => {
             <span className="text-indigo-400 text-xs font-medium">MY WORK</span>
           </div>
        <div className="w-fit mx-auto mb-8">
-  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2 text-center">
+  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 text-center">
     Featured Projects
   </h2>
   <motion.div

@@ -86,7 +86,7 @@ useEffect(() => {
             </div>
 
             {/* Typewriter Heading */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold text-white leading-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold text-white leading-tight">
               {displayText}
               <span className="text-indigo-400 animate-pulse">|</span>
             </h1>
@@ -176,10 +176,7 @@ useEffect(() => {
               </div>
 
               {/* Floating Badge - Status */}
-              <div className="absolute -right-4 top-10 rounded-full bg-emerald-500/15 border border-emerald-400/40 backdrop-blur-md px-4 py-1.5 flex items-center gap-2 shadow-lg">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span className="text-xs font-medium text-emerald-300">Open to work</span>
-              </div>
+              
             </div>
           </div>
         </div>

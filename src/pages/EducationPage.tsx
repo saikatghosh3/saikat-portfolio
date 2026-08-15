@@ -45,7 +45,7 @@ export const EducationPage = () => {
             <span className="text-indigo-400 text-xs font-medium">ACADEMIC BACKGROUND</span>
           </div>
       <div className="w-fit mx-auto mb-4">
-  <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2 text-center">
+  <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 text-center">
     Education & Qualifications
   </h1>
   <motion.div
