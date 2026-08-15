@@ -67,15 +67,17 @@ export const ContactPage = () => {
             <Mail className="w-3 h-3 text-indigo-400" />
             <span className="text-indigo-400 text-xs font-medium">LET'S CONNECT</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            Get In Touch
-          </h1>
-          <motion.div
-            initial={{ width: 0 }}
-            animate={{ width: '100%' }}
-            transition={{ duration: 0.6, ease: 'easeInOut' }}
-            className="h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto rounded-full max-w-[12rem] sm:max-w-[16rem] md:max-w-[20rem]"
-          />
+          <div className="w-fit mx-auto mb-8">
+            <h1 className="text-3xl sm:text-4xl font-bold text-white mb-2 text-center">
+              Get In Touch
+            </h1>
+            <motion.div
+              initial={{ width: 0 }}
+              animate={{ width: '100%' }}
+              transition={{ duration: 0.6, ease: 'easeInOut' }}
+              className="h-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full"
+            />
+          </div>
           <p className="mt-6 text-gray-400 max-w-2xl mx-auto">
             Have a question or want to work together? I'd love to hear from you
           </p>
