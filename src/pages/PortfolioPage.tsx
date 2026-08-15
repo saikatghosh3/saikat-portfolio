@@ -1,6 +1,7 @@
 
 import { motion } from 'framer-motion';
 import { Portfolio } from '../components/sections/Portfolio';
+import { FrontendDesign } from '../components/sections/FrontendDesign';
 import { Layers } from 'lucide-react';
 
 export const PortfolioPage = () => {
@@ -21,6 +22,7 @@ export const PortfolioPage = () => {
       </div>
 
       <Portfolio />
+      <FrontendDesign />
     </div>
   );
 };

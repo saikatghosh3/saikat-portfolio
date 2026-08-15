@@ -87,9 +87,8 @@
 
 import { projects } from '../../data/projects';
 import { Github, Link, ExternalLink, Star, GitFork, Calendar } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import {motion} from 'framer-motion';
-import { Star as StarIcon } from 'lucide-react';
 
 export const Portfolio = () => {
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
@@ -128,7 +127,7 @@ export const Portfolio = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7">
           {projects.map((project, index) => (
             <div
               key={project.title}
@@ -143,7 +142,7 @@ export const Portfolio = () => {
               {/* Main Card */}
               <div className="relative backdrop-blur-sm bg-white/5 rounded-2xl border border-white/10 overflow-hidden hover:border-white/20 transition-all duration-500">
                 {/* Image Container */}
-                <div className="relative overflow-hidden h-64 lg:h-72">
+                <div className="relative overflow-hidden h-40 lg:h-44">
                   <img
                     src={project.imageUrl}
                     alt={project.title}
@@ -186,10 +185,10 @@ export const Portfolio = () => {
                 </div>
 
                 {/* Content */}
-                <div className="p-6 lg:p-8">
+                <div className="p-5">
                   {/* Title and Stats */}
-                  <div className="flex items-start justify-between mb-3">
-                    <h3 className="text-xl lg:text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-indigo-400 group-hover:to-purple-400 transition-all duration-300">
+                  <div className="flex items-start justify-between mb-2">
+                    <h3 className="text-lg font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-indigo-400 group-hover:to-purple-400 transition-all duration-300">
                       {project.title}
                     </h3>
                     <div className="flex items-center gap-2">
@@ -209,16 +208,16 @@ export const Portfolio = () => {
                   </div>
                   
                   {/* Description */}
-                  <p className="text-gray-400 text-sm lg:text-base leading-relaxed mb-4">
+                  <p className="text-gray-400 text-sm leading-relaxed mb-3">
                     {project.description}
                   </p>
                   
                   {/* Technologies */}
-                  <div className="flex flex-wrap gap-2 mb-6">
+                  <div className="flex flex-wrap gap-1.5 mb-4">
                     {project.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300 text-xs font-medium
+                        className="px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-gray-300 text-[11px] font-medium
                                  hover:border-indigo-500/50 hover:text-indigo-400 transition-all duration-300"
                       >
                         {tech}
@@ -233,7 +232,7 @@ export const Portfolio = () => {
                         href={project.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group/btn flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 text-white text-sm font-medium hover:shadow-lg hover:shadow-indigo-500/25 transition-all duration-300 transform hover:-translate-y-0.5"
+                        className="group/btn flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 text-white text-sm font-medium hover:shadow-lg hover:shadow-indigo-500/25 transition-all duration-300 transform hover:-translate-y-0.5"
                       >
                         <Link className="w-4 h-4" />
                         Live Demo
@@ -244,7 +243,7 @@ export const Portfolio = () => {
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group/btn flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-gray-300 text-sm font-medium hover:bg-indigo-500/20 hover:border-indigo-500/50 hover:text-white transition-all duration-300"
+                        className="group/btn flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white/5 border border-white/10 text-gray-300 text-sm font-medium hover:bg-indigo-500/20 hover:border-indigo-500/50 hover:text-white transition-all duration-300"
                       >
                         <Github className="w-4 h-4" />
                         Source Code

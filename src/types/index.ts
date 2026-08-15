@@ -7,6 +7,7 @@ export interface Project {
   imageUrl: string;
   liveUrl?: string;
   githubUrl?: string;
+  featured?: boolean;
 }
 
 export interface Experience {

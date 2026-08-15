@@ -31,7 +31,8 @@ export const projects: Project[] = [
     technologies: ["React", "TypeScript", "Tailwind CSS", "Redux"],
     imageUrl: image5, 
     liveUrl: "https://react-healthcare.vercel.app/",
-    githubUrl: "https://github.com"
+    githubUrl: "https://github.com",
+    featured: true
   },
   {
     title: "Business portfolio",
@@ -63,7 +64,8 @@ export const projects: Project[] = [
     technologies: ["Next.js", "Tailwind css","MongoDb"],
     imageUrl: image14,
     liveUrl: "https://desi-mango-fullstack.vercel.app",
-    githubUrl: "https://github.com"
+    githubUrl: "https://github.com",
+    featured: true
   },
   // {
   //   title: "University website",
@@ -79,7 +81,8 @@ export const projects: Project[] = [
     technologies: ["Next.js", "Tailwind CSS", "MongoDB"],
     imageUrl: image15,
     liveUrl: "https://e-commerce-fullstack-ivory.vercel.app/",
-    githubUrl: "https://github.com"
+    githubUrl: "https://github.com",
+    featured: true
   },
   {
     title: "Expense-tracker",
