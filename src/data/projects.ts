@@ -15,6 +15,7 @@ import image12 from '../assets/BusinessPortfolio.jpg';
 import image13 from '../assets/ReactLandingPage.jpg';
 import image14 from '../assets/DeshiMango.png'
 import image15 from '../assets/E-commerce.jpg';
+import image16 from '../assets/mobile.png';
 
 export const projects: Project[] = [
   // {
@@ -81,6 +82,15 @@ export const projects: Project[] = [
     technologies: ["Next.js", "Tailwind CSS", "MongoDB"],
     imageUrl: image15,
     liveUrl: "https://e-commerce-fullstack-ivory.vercel.app/",
+    githubUrl: "https://github.com",
+    featured: true
+  },
+  {
+    title: "Mobile and Gadget E-commerce website",
+    description: "A responsive E-commerce  fullstack website with a clean code and  design",
+    technologies: ["Next.js", "Tailwind CSS", "MongoDB"],
+    imageUrl: image16,
+    liveUrl: "https://mobile-and-gadget.vercel.app/",
     githubUrl: "https://github.com",
     featured: true
   },
