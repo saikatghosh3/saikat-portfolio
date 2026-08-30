@@ -1,9 +1,9 @@
+@import './styles/components.css';
+@import './styles/gradients.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import './styles/components.css';
-@import './styles/gradients.css';
 
 @layer base {
   html {

@@ -39,8 +39,32 @@
 // };
 
 
+import { useState, useEffect, useRef } from 'react';
+import { useInView } from 'framer-motion';
 import { experiences } from '../../data/experience';
 import { Briefcase, Calendar, MapPin, Award, TrendingUp } from 'lucide-react';
+
+const AnimatedCounter = ({ target, display, duration = 1800 }: { target: number; display?: string; duration?: number }) => {
+  const ref = useRef<HTMLSpanElement>(null);
+  const inView = useInView(ref, { once: true, margin: '-50px' });
+  const [value, setValue] = useState(1);
+
+  useEffect(() => {
+    if (!inView) return;
+    let raf: number;
+    const start = performance.now();
+    const tick = (now: number) => {
+      const t = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - t, 3);
+      setValue(Math.round(1 + (target - 1) * eased));
+      if (t < 1) raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [inView, target, duration]);
+
+  return <span ref={ref}>{display ? display.replace('{n}', String(value)) : value}</span>;
+};
 
 export const Experience = () => {
   return (
@@ -163,27 +187,25 @@ export const Experience = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div className="space-y-2">
               <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">
-                {/* {experiences.length} + */}
-                2+
+                <AnimatedCounter target={2} display="{n}+" />
               </div>
               <div className="text-sm text-gray-400">Years Experience</div>
             </div>
             <div className="space-y-2">
               <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">
-                {/* {experiences.reduce((sum, exp} => sum + exp.description.length, 0)}+ */}
-                5+
+                <AnimatedCounter target={5} display="{n}+" />
               </div>
               <div className="text-sm text-gray-400">Achievements</div>
             </div>
             <div className="space-y-2">
               <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">
-                100%
+                <AnimatedCounter target={100} display="{n}%" />
               </div>
               <div className="text-sm text-gray-400">Client Satisfaction</div>
             </div>
             <div className="space-y-2">
               <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">
-                24/7
+                <AnimatedCounter target={24} display="{n}/7" />
               </div>
               <div className="text-sm text-gray-400">Support Available</div>
             </div>

@@ -89,6 +89,7 @@ import { projects } from '../../data/projects';
 import { Github, Link, ExternalLink, Star, GitFork, Calendar } from 'lucide-react';
 import { useState } from 'react';
 import {motion} from 'framer-motion';
+import { Carousel } from '../ui/Carousel';
 
 export const Portfolio = () => {
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
@@ -126,21 +127,20 @@ export const Portfolio = () => {
           </p>
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7">
+        {/* Projects Carousel */}
+        <Carousel>
           {projects.map((project, index) => (
             <div
               key={project.title}
-              className="group relative"
+              className="group relative h-full"
               onMouseEnter={() => setHoveredProject(index)}
               onMouseLeave={() => setHoveredProject(null)}
-              style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Card Glow Effect */}
               <div className={`absolute inset-0 rounded-2xl bg-gradient-to-r from-indigo-500 to-purple-500 opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-md -z-10 ${hoveredProject === index ? 'opacity-20' : ''}`} />
               
               {/* Main Card */}
-              <div className="relative backdrop-blur-sm bg-white/5 rounded-2xl border border-white/10 overflow-hidden hover:border-white/20 transition-all duration-500">
+              <div className="relative h-full backdrop-blur-sm bg-white/5 rounded-2xl border border-white/10 overflow-hidden hover:border-white/20 transition-all duration-500">
                 {/* Image Container */}
                 <div className="relative overflow-hidden h-40 lg:h-44">
                   <img
@@ -262,7 +262,7 @@ export const Portfolio = () => {
               </div>
             </div>
           ))}
-        </div>
+        </Carousel>
 
         {/* View More CTA */}
         {/* <div className="text-center mt-10 sm:mt-12">

@@ -1,6 +1,7 @@
 import { designProjects } from '../../data/designProjects';
 import { Palette, Rocket, ExternalLink } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Carousel } from '../ui/Carousel';
 
 export const FrontendDesign = () => {
   return (
@@ -36,19 +37,15 @@ export const FrontendDesign = () => {
           </p>
         </div>
 
-        {/* Design Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {designProjects.map((project, index) => (
-            <div
-              key={project.title}
-              className="group relative"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
+        {/* Design Carousel */}
+        <Carousel>
+          {designProjects.map((project) => (
+            <div key={project.title} className="group relative h-full">
               {/* Card Glow Effect */}
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-indigo-500 to-purple-500 opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-md -z-10" />
 
               {/* Main Card */}
-              <div className="relative backdrop-blur-sm bg-white/5 rounded-2xl border border-white/10 overflow-hidden hover:border-indigo-500/40 transition-all duration-500 hover:transform hover:-translate-y-1">
+              <div className="relative h-full backdrop-blur-sm bg-white/5 rounded-2xl border border-white/10 overflow-hidden hover:border-indigo-500/40 transition-all duration-500 hover:transform hover:-translate-y-1">
                 {/* Image */}
                 <div className="relative overflow-hidden h-44">
                   <img
@@ -97,7 +94,7 @@ export const FrontendDesign = () => {
               </div>
             </div>
           ))}
-        </div>
+        </Carousel>
       </div>
     </section>
   );

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { forwardRef, useEffect, useId, useState, type RefObject, type ReactNode, type SVGProps } from 'react';
+import { forwardRef, useEffect, useId, useState, type RefObject, type ReactNode, type SVGProps, type CSSProperties } from 'react';
 
 interface AnimatedBeamProps {
   className?: string;
@@ -139,12 +139,14 @@ export const AnimatedBeam = ({
 interface CircleProps {
   className?: string;
   children?: ReactNode;
+  style?: CSSProperties;
 }
 
-export const Circle = forwardRef<HTMLDivElement, CircleProps>(({ className, children }, ref) => {
+export const Circle = forwardRef<HTMLDivElement, CircleProps>(({ className, children, style }, ref) => {
   return (
     <div
       ref={ref}
+      style={style}
       className={[
         'z-10 flex h-12 w-12 items-center justify-center rounded-full border-2 border-white/30 bg-slate-900/90 shadow-[0_0_20px_-10px_rgba(129,140,248,0.8)]',
         className,
