@@ -71,3 +71,34 @@
 .animate-slide-in-right {
   animation: slideInRight 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
+
+@keyframes orbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-orbit {
+  animation: orbit 20s linear infinite;
+}
+
+.animate-orbit-reverse {
+  animation: orbit 20s linear infinite reverse;
+}
+
+@keyframes counter-orbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+.animate-counter-orbit {
+  animation: counter-orbit 20s linear infinite;
+}
+
+@keyframes ticker-glow {
+  0%, 100% { box-shadow: 0 0 5px rgba(99, 102, 241, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(99, 102, 241, 0.6), 0 0 40px rgba(168, 85, 247, 0.3); }
+}
+
+.animate-ticker-glow {
+  animation: ticker-glow 2s ease-in-out infinite;
+}

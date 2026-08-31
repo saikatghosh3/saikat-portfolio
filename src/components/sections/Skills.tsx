@@ -181,22 +181,25 @@ export const Skills = () => {
             </span>
           </div>
 
-          {/* Logos arranged on a ring */}
-          {beamLogos.map((brand, i) => (
-            <div
-              key={brand.name}
-              className="absolute z-10 -translate-x-1/2 -translate-y-1/2"
-              style={{ left: ringPositions[i].left, top: ringPositions[i].top }}
-            >
-              <Circle
-                ref={logoRefs[i]}
-                className="h-12 w-12 sm:h-14 sm:w-14 p-2.5 border-white/20 hover:border-white/50 transition-all duration-300 hover:scale-110"
-                style={{ boxShadow: `0 0 22px -6px ${brand.color}88` }}
+          {/* Orbiting Ring */}
+          <div className="absolute inset-0 animate-orbit">
+            {/* Logos arranged on a ring */}
+            {beamLogos.map((brand, i) => (
+              <div
+                key={brand.name}
+                className="absolute z-10 -translate-x-1/2 -translate-y-1/2"
+                style={{ left: ringPositions[i].left, top: ringPositions[i].top }}
               >
-                <brand.Icon className="w-full h-full" style={{ color: brand.color }} />
-              </Circle>
-            </div>
-          ))}
+                <Circle
+                  ref={logoRefs[i]}
+                  className="h-12 w-12 sm:h-14 sm:w-14 p-2.5 border-white/20 hover:border-white/50 transition-all duration-300 hover:scale-110 animate-counter-orbit"
+                  style={{ boxShadow: `0 0 22px -6px ${brand.color}88` }}
+                >
+                  <brand.Icon className="w-full h-full" style={{ color: brand.color }} />
+                </Circle>
+              </div>
+            ))}
+          </div>
 
           {/* Animated Beams from logos to hub */}
           {beamLogos.map((brand, i) => (
@@ -215,21 +218,26 @@ export const Skills = () => {
         </div>
 
         {/* Scrolling Logo Marquee */}
-        <div className="relative mt-12 overflow-hidden">
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-slate-900 to-transparent z-10" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-slate-900 to-transparent z-10" />
+        <div className="relative mt-12 py-5 overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm animate-ticker-glow">
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-slate-900 via-slate-900/80 to-transparent z-10" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-slate-900 via-slate-900/80 to-transparent z-10" />
           <motion.div
-            className="flex gap-10 items-center"
+            className="flex gap-12 items-center"
             animate={{ x: ['0%', '-50%'] }}
-            transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
+            transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
           >
             {[...timeline, ...timeline].map((brand, i) => (
               <div
                 key={`${brand.name}-${i}`}
-                className="flex flex-col items-center gap-2 shrink-0"
+                className="flex flex-col items-center gap-2.5 shrink-0 group/ticker"
               >
-                <brand.Icon className="w-9 h-9 text-white/70 hover:text-white transition-colors duration-300" style={{ color: brand.color }} />
-                <span className="text-[11px] text-gray-500">{brand.name}</span>
+                <div
+                  className="p-3 rounded-xl border border-white/10 bg-white/5 group-hover/ticker:scale-110 group-hover/ticker:border-white/30 transition-all duration-300"
+                  style={{ boxShadow: `0 0 12px -4px ${brand.color}66` }}
+                >
+                  <brand.Icon className="w-8 h-8" style={{ color: brand.color }} />
+                </div>
+                <span className="text-xs text-gray-400 font-medium group-hover/ticker:text-white transition-colors duration-300">{brand.name}</span>
               </div>
             ))}
           </motion.div>

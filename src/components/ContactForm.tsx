@@ -85,6 +85,8 @@ export const ContactForm: React.FC = () => {
     message: false,
   });
 
+  const [sending, setSending] = useState(false);
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { id, value } = e.target;
     setFormData((prev) => ({ ...prev, [id]: value }));
@@ -102,22 +104,20 @@ export const ContactForm: React.FC = () => {
     return !Object.values(newErrors).includes(true);
   };
 
-  const sendEmail = () => {
-    const bodyMessage = `
-      Full Name: ${formData.name} <br>
-      Email: ${formData.email} <br>
-      Phone Number: ${formData.phone} <br>
-      Message: ${formData.message}
-    `;
+  const sendEmail = async (form: HTMLFormElement) => {
+    setSending(true);
+    try {
+      const payload = new FormData(form);
+      payload.append("access_key", "3f752c3d-7477-44e0-8453-0b24e4fec671");
 
-    window.Email.send({
-      SecureToken: "14fb52dd-30d9-4f62-857e-0197d4470ebc",
-      To: "gkst374@gmail.com",
-      From: "gkst374@gmail.com",
-      Subject: formData.subject,
-      Body: bodyMessage,
-    }).then((message: string) => {
-      if (message === "OK") {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: payload,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
         Swal.fire({
           title: "Success!",
           text: "Message sent successfully!",
@@ -137,13 +137,22 @@ export const ContactForm: React.FC = () => {
           icon: "error",
         });
       }
-    });
+    } catch {
+      Swal.fire({
+        title: "Error!",
+        text: "There was an issue sending the message.",
+        icon: "error",
+      });
+    } finally {
+      setSending(false);
+    }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (validateInputs()) {
-      sendEmail();
+      const form = e.target as HTMLFormElement;
+      sendEmail(form);
     }
   };
 
@@ -156,6 +165,7 @@ export const ContactForm: React.FC = () => {
         <input
           type="text"
           id="name"
+          name="name"
           value={formData.name}
           onChange={handleInputChange}
           className={`w-full px-4 py-2 rounded-lg border ${
@@ -170,6 +180,7 @@ export const ContactForm: React.FC = () => {
         <input
           type="email"
           id="email"
+          name="email"
           value={formData.email}
           onChange={handleInputChange}
           className={`w-full px-4 py-2 rounded-lg border ${
@@ -184,6 +195,7 @@ export const ContactForm: React.FC = () => {
         <input
           type="text"
           id="phone"
+          name="phone"
           value={formData.phone}
           onChange={handleInputChange}
           className={`w-full px-4 py-2 rounded-lg border ${
@@ -198,6 +210,7 @@ export const ContactForm: React.FC = () => {
         <input
           type="text"
           id="subject"
+          name="subject"
           value={formData.subject}
           onChange={handleInputChange}
           className={`w-full px-4 py-2 rounded-lg border ${
@@ -211,6 +224,7 @@ export const ContactForm: React.FC = () => {
         </label>
         <textarea
           id="message"
+          name="message"
           rows={4}
           value={formData.message}
           onChange={handleInputChange}
