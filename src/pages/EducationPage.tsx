@@ -24,7 +24,7 @@
 
 import { motion } from 'framer-motion';
 import { education } from '../data/education';
-import { GraduationCap, Calendar, MapPin, Award, BookOpen, Sparkles } from 'lucide-react';
+import { GraduationCap, Calendar, MapPin, Award, BookOpen } from 'lucide-react';
 
 export const EducationPage = () => {
   return (

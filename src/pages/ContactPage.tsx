@@ -25,7 +25,7 @@
 
 
 import { motion } from 'framer-motion';
-import { Mail, Sparkles, Linkedin, Github, MapPin, Phone, Send, User, MessageSquare } from 'lucide-react';
+import { Mail, Linkedin, Github, MapPin, Send, User, MessageSquare } from 'lucide-react';
 import { useState } from 'react';
 
 export const ContactPage = () => {
@@ -266,10 +266,11 @@ export const ContactPage = () => {
 
                 <button
                   type="submit"
-                  className="w-full group/btn relative overflow-hidden px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-medium flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-indigo-500/25 transition-all duration-300 transform hover:-translate-y-0.5"
+                  disabled={sending}
+                  className="w-full group/btn relative overflow-hidden px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-medium flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-indigo-500/25 transition-all duration-300 transform hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   <Send className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                  <span>Send Message</span>
+                  <span>{sending ? "Sending..." : "Send Message"}</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700" />
                 </button>
               </form>

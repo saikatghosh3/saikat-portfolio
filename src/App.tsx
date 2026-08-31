@@ -6,6 +6,7 @@ import { Loader } from './components/Loader';
 import { Footer } from './components/Footer';
 import { ScrollToTop } from './components/ScrollToTop';
 import { ScrollToTop1 } from './components/ScrollToTop1';
+import { ChatBot } from './components/chatbot';
 import { Home } from './pages/Home';
 import { SkillsPage } from './pages/SkillsPage';
 import { PortfolioPage } from './pages/PortfolioPage';
@@ -40,6 +41,7 @@ export function App() {
         </Routes>
         <Footer />
         <ScrollToTop />
+        <ChatBot />
       </div>
     </Router>
   );

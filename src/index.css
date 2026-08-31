@@ -102,3 +102,84 @@
 .animate-ticker-glow {
   animation: ticker-glow 2s ease-in-out infinite;
 }
+
+/* ─── Chatbot Styles ─── */
+.chatbot-strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+.chatbot-code {
+  display: inline;
+  padding: 2px 6px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #c4b5fd;
+  font-size: 12px;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+.chatbot-link {
+  color: #a5b4fc;
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: rgba(129, 140, 248, 0.4);
+  transition: all 0.2s;
+}
+
+.chatbot-link:hover {
+  color: #c7d2fe;
+  text-decoration-color: rgba(165, 180, 252, 0.7);
+}
+
+.chatbot-markdown strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+.chatbot-markdown code {
+  display: inline;
+  padding: 2px 6px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #c4b5fd;
+  font-size: 12px;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+.chatbot-markdown a {
+  color: #a5b4fc;
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: rgba(129, 140, 248, 0.4);
+  transition: all 0.2s;
+}
+
+.chatbot-markdown a:hover {
+  color: #c7d2fe;
+  text-decoration-color: rgba(165, 180, 252, 0.7);
+}
+
+.chatbot-markdown br {
+  display: block;
+  content: '';
+  margin-top: 4px;
+}
+
+/* Scrollbar for chat messages */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 4px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
