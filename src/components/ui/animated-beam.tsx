@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { forwardRef, useEffect, useId, useState, type RefObject, type ReactNode, type SVGProps, type CSSProperties } from 'react';
+import { forwardRef, useEffect, useId, useRef, useState, type RefObject, type ReactNode, type SVGProps, type CSSProperties } from 'react';
 
 interface AnimatedBeamProps {
   className?: string;
@@ -41,12 +41,20 @@ export const AnimatedBeam = ({
   endYOffset = 0,
 }: AnimatedBeamProps) => {
   const id = useId();
-  const [pathD, setPathD] = useState('');
-  const [svgDimensions, setSvgDimensions] = useState({ width: 0, height: 0 });
+  const svgRef = useRef<SVGSVGElement>(null);
+  const staticPathRef = useRef<SVGPathElement>(null);
+  const animatedPathRef = useRef<SVGPathElement>(null);
+  const gradRef = useRef<SVGLinearGradientElement>(null);
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
+    let rafId: number;
+
     const updatePath = () => {
-      if (!containerRef.current || !fromRef.current || !toRef.current) return;
+      if (!containerRef.current || !fromRef.current || !toRef.current) {
+        rafId = requestAnimationFrame(updatePath);
+        return;
+      }
 
       const containerRect = containerRef.current.getBoundingClientRect();
       const rectA = fromRef.current.getBoundingClientRect();
@@ -54,7 +62,17 @@ export const AnimatedBeam = ({
 
       const svgWidth = containerRect.width;
       const svgHeight = containerRect.height;
-      setSvgDimensions({ width: svgWidth, height: svgHeight });
+
+      if (svgRef.current) {
+        svgRef.current.setAttribute('width', String(svgWidth));
+        svgRef.current.setAttribute('height', String(svgHeight));
+      }
+      if (gradRef.current) {
+        gradRef.current.setAttribute('x1', String(svgWidth / 2));
+        gradRef.current.setAttribute('y1', '0');
+        gradRef.current.setAttribute('x2', String(svgWidth / 2));
+        gradRef.current.setAttribute('y2', String(svgHeight));
+      }
 
       const startX = rectA.left - containerRect.left + rectA.width / 2 + startXOffset;
       const startY = rectA.top - containerRect.top + rectA.height / 2 + startYOffset;
@@ -64,22 +82,25 @@ export const AnimatedBeam = ({
       const controlY = startY - curvature;
       const d = `M ${startX},${startY} Q ${(startX + endX) / 2},${controlY} ${endX},${endY}`;
 
-      setPathD(d);
+      if (staticPathRef.current) staticPathRef.current.setAttribute('d', d);
+      if (animatedPathRef.current) animatedPathRef.current.setAttribute('d', d);
+
+      rafId = requestAnimationFrame(updatePath);
     };
 
-    updatePath();
-    window.addEventListener('resize', updatePath);
-    return () => window.removeEventListener('resize', updatePath);
+    rafId = requestAnimationFrame(updatePath);
+    setReady(true);
+
+    return () => cancelAnimationFrame(rafId);
   }, [containerRef, fromRef, toRef, curvature, startXOffset, startYOffset, endXOffset, endYOffset]);
 
-  if (!pathD) return null;
+  if (!ready) return null;
 
   const gradientId = `gradient-${id}`;
 
   return (
     <svg
-      width={svgDimensions.width}
-      height={svgDimensions.height}
+      ref={svgRef}
       className={className}
       style={{
         pointerEvents: 'none',
@@ -91,12 +112,9 @@ export const AnimatedBeam = ({
     >
       <defs>
         <linearGradient
+          ref={gradRef}
           id={gradientId}
           gradientUnits="userSpaceOnUse"
-          x1={svgDimensions.width / 2}
-          y1="0"
-          x2={svgDimensions.width / 2}
-          y2={svgDimensions.height}
         >
           <stop stopColor={gradientStartColor} stopOpacity="0" />
           <stop stopColor={gradientStopColor} />
@@ -104,9 +122,8 @@ export const AnimatedBeam = ({
         </linearGradient>
       </defs>
 
-      {/* Static faint path */}
       <path
-        d={pathD}
+        ref={staticPathRef}
         strokeWidth={pathWidth}
         stroke={pathColor}
         strokeOpacity={pathOpacity}
@@ -114,9 +131,8 @@ export const AnimatedBeam = ({
         fill="none"
       />
 
-      {/* Traveling light beam */}
       <motion.path
-        d={pathD}
+        ref={animatedPathRef}
         strokeWidth={pathWidth}
         stroke={`url(#${gradientId})`}
         strokeLinecap="round"

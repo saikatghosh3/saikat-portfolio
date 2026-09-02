@@ -210,7 +210,7 @@ export const Skills = () => {
               toRef={hubRef}
               duration={3}
               delay={i * 0.4}
-              curvature={i % 2 === 0 ? 24 : -24}
+              curvature={0}
               gradientStartColor={beamColors[i][0]}
               gradientStopColor={beamColors[i][1]}
             />
