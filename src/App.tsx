@@ -26,7 +26,7 @@ export function App() {
 
   return (
     <Router>
-      <div className="min-h-screen animated-gradient">
+      <div className="min-h-screen page-bg">
         <AnimatePresence>{loading && <Loader />}</AnimatePresence>
         <Navbar />
         <ScrollToTop1 />
