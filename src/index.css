@@ -15,6 +15,20 @@
   }
 }
 
+@layer utilities {
+  .section-bg {
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+  }
+
+  .orb-indigo {
+    background: rgba(99, 102, 241, 0.05);
+  }
+
+  .orb-purple {
+    background: rgba(168, 85, 247, 0.05);
+  }
+}
+
 .glow-effect {
   position: relative;
   display: inline-block;

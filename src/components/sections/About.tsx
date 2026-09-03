@@ -68,12 +68,12 @@ useEffect(() => {
   return (
     <section id="about" className="relative min-h-screen flex items-center overflow-hidden pt-24 pb-16 sm:pb-20">
       {/* Background - Matching other sections */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900" />
+      <div className="absolute inset-0 section-bg" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-500/5 via-transparent to-transparent" />
 
       {/* Animated Background Orbs */}
-      <div className="absolute top-1/3 -left-48 w-96 h-96 bg-indigo-500/5 rounded-full blur-2xl animate-pulse" />
-      <div className="absolute bottom-1/3 -right-48 w-96 h-96 bg-purple-500/5 rounded-full blur-2xl animate-pulse delay-1000" />
+      <div className="absolute top-1/4 -left-48 w-96 h-96 orb-indigo rounded-full blur-2xl animate-pulse" />
+      <div className="absolute bottom-1/4 -right-48 w-96 h-96 orb-purple rounded-full blur-2xl animate-pulse delay-1000" />
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-12 items-center">

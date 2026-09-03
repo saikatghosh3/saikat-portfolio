@@ -10,7 +10,7 @@ export const Loader = () => {
       className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden"
       aria-label="Loading"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900" />
+      <div className="absolute inset-0 section-bg" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl animate-pulse" />
       <div className="absolute -top-24 -left-24 w-72 h-72 bg-indigo-500/5 rounded-full blur-3xl" />
       <div className="absolute -bottom-24 -right-24 w-72 h-72 bg-purple-500/5 rounded-full blur-3xl" />
