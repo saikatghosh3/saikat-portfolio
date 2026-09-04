@@ -1,6 +1,6 @@
 import { Code2, Palette, Wrench, TestTube2, Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { AnimatedBeam, Circle } from '../ui/animated-beam';
 import {
   SiReact,
@@ -129,6 +129,20 @@ export const Skills = () => {
     useRef<HTMLDivElement>(null),
     useRef<HTMLDivElement>(null),
   ];
+  const marqueeRef = useRef<HTMLDivElement>(null);
+  const [tickerDuration, setTickerDuration] = useState(12);
+
+  useEffect(() => {
+    const updateTicker = () => {
+      if (marqueeRef.current) {
+        const singleWidth = marqueeRef.current.scrollWidth / 2;
+        setTickerDuration(Math.max(6, singleWidth / 110));
+      }
+    };
+    updateTicker();
+    window.addEventListener("resize", updateTicker);
+    return () => window.removeEventListener("resize", updateTicker);
+  }, []);
 
   return (
     <section id="skills" className="relative py-16 sm:py-20 overflow-hidden">
@@ -222,9 +236,10 @@ export const Skills = () => {
           <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-slate-900 via-slate-900/80 to-transparent z-10" />
           <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-slate-900 via-slate-900/80 to-transparent z-10" />
           <motion.div
+            ref={marqueeRef}
             className="flex gap-12 items-center"
             animate={{ x: ['0%', '-50%'] }}
-            transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
+            transition={{ duration: tickerDuration, repeat: Infinity, ease: 'linear' }}
           >
             {[...timeline, ...timeline].map((brand, i) => (
               <div

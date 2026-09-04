@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Loader } from './components/Loader';
 import { Footer } from './components/Footer';
-import { DisableInspect } from './components/DisableInspect';
 import { ScrollToTop } from './components/ScrollToTop';
 import { ScrollToTop1 } from './components/ScrollToTop1';
 import { ChatBot } from './components/chatbot';
@@ -31,7 +30,6 @@ export function App() {
         <AnimatePresence>{loading && <Loader />}</AnimatePresence>
         <Navbar />
         <ScrollToTop1 />
-        <DisableInspect />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/skills" element={<SkillsPage />} />

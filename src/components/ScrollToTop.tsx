@@ -104,15 +104,21 @@ export const ScrollToTop = () => {
 
   useEffect(() => {
     const toggleVisibility = () => {
-      if (window.scrollY > 300) {
+      const scrollY = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop;
+      if (scrollY > 300) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
       }
     };
 
-    window.addEventListener('scroll', toggleVisibility);
-    return () => window.removeEventListener('scroll', toggleVisibility);
+    window.addEventListener('scroll', toggleVisibility, { passive: true });
+    window.addEventListener('resize', toggleVisibility);
+    toggleVisibility();
+    return () => {
+      window.removeEventListener('scroll', toggleVisibility);
+      window.removeEventListener('resize', toggleVisibility);
+    };
   }, []);
 
   const scrollToTop = () => {
@@ -136,7 +142,7 @@ export const ScrollToTop = () => {
           exit={{ opacity: 0, scale: 0, y: 20 }}
           transition={{ duration: 0.3, ease: 'easeOut' }}
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-50 group"
+          className="fixed bottom-5 left-5 sm:bottom-6 sm:left-6 z-40 group"
           aria-label="Scroll to top"
         >
           <div className="relative">
@@ -153,7 +159,7 @@ export const ScrollToTop = () => {
             </div>
             
             {/* Tooltip */}
-            <div className="absolute right-full mr-3 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none whitespace-nowrap">
+            <div className="absolute left-full ml-3 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none whitespace-nowrap">
               <div className="bg-slate-900 text-gray-300 text-xs font-medium px-2 py-1 rounded-lg border border-white/10">
                 Back to top
               </div>
