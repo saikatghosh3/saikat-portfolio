@@ -53,6 +53,14 @@
    
  import { Mail, Linkedin, Github, Send, MapPin } from 'lucide-react';
 import { useState } from 'react';
+import {
+  getAccessKeyField,
+  getWeb3FormsKey,
+  getWeb3FormsSubmitUrl,
+  getTelegramBotToken,
+  getTelegramChatId,
+  getTelegramSendUrl,
+} from '../../utils/secrets';
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -69,9 +77,9 @@ export const Contact = () => {
     try {
       const form = e.target as HTMLFormElement;
       const formData = new FormData(form);
-      formData.append("access_key", "3f752c3d-7477-44e0-8453-0b24e4fec671");
+      formData.append(getAccessKeyField(), getWeb3FormsKey());
 
-      const response = await fetch("https://api.web3forms.com/submit", {
+      const response = await fetch(getWeb3FormsSubmitUrl(), {
         method: "POST",
         body: formData,
       });
@@ -79,6 +87,7 @@ export const Contact = () => {
       const data = await response.json();
 
       if (data.success) {
+        await sendTelegramNotification();
         setIsSubmitted(true);
         setTimeout(() => setIsSubmitted(false), 3000);
         form.reset();
@@ -98,6 +107,28 @@ export const Contact = () => {
       ...formData,
       [e.target.name]: e.target.value
     });
+  };
+
+  const sendTelegramNotification = async () => {
+    const token = getTelegramBotToken();
+    const chatId = getTelegramChatId();
+    if (!token || !chatId) return;
+
+    const text =
+      `🚨 You've got an email!\n\n` +
+      `👤 Name: ${formData.name}\n` +
+      `📧 Email: ${formData.email}\n` +
+      `💬 Message: ${formData.message}`;
+
+    try {
+      await fetch(getTelegramSendUrl(), {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ chat_id: chatId, text }),
+      });
+    } catch {
+      console.error("Failed to send Telegram notification");
+    }
   };
 
   return (

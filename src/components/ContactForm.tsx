@@ -65,6 +65,14 @@
 
 import React, { useState } from "react";
 import Swal from "sweetalert2";
+import {
+  getAccessKeyField,
+  getWeb3FormsKey,
+  getWeb3FormsSubmitUrl,
+  getTelegramBotToken,
+  getTelegramChatId,
+  getTelegramSendUrl,
+} from "../utils/secrets";
 
 
 
@@ -104,13 +112,37 @@ export const ContactForm: React.FC = () => {
     return !Object.values(newErrors).includes(true);
   };
 
+  const sendTelegramNotification = async () => {
+    const token = getTelegramBotToken();
+    const chatId = getTelegramChatId();
+    if (!token || !chatId) return;
+
+    const text =
+      `🚨 You've got an email!\n\n` +
+      `👤 Name: ${formData.name}\n` +
+      `📧 Email: ${formData.email}\n` +
+      `📞 Phone: ${formData.phone}\n` +
+      `📌 Subject: ${formData.subject}\n` +
+      `💬 Message: ${formData.message}`;
+
+    try {
+      await fetch(getTelegramSendUrl(), {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ chat_id: chatId, text }),
+      });
+    } catch {
+      console.error("Failed to send Telegram notification");
+    }
+  };
+
   const sendEmail = async (form: HTMLFormElement) => {
     setSending(true);
     try {
       const payload = new FormData(form);
-      payload.append("access_key", "3f752c3d-7477-44e0-8453-0b24e4fec671");
+      payload.append(getAccessKeyField(), getWeb3FormsKey());
 
-      const response = await fetch("https://api.web3forms.com/submit", {
+      const response = await fetch(getWeb3FormsSubmitUrl(), {
         method: "POST",
         body: payload,
       });
@@ -118,6 +150,7 @@ export const ContactForm: React.FC = () => {
       const data = await response.json();
 
       if (data.success) {
+        await sendTelegramNotification();
         Swal.fire({
           title: "Success!",
           text: "Message sent successfully!",
