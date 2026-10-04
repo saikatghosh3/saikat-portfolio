@@ -1,6 +1,7 @@
-import { Code2, Palette, Wrench, TestTube2, Sparkles } from 'lucide-react';
+import { Code2, Palette, Wrench, TestTube2, Sparkles, Server } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
+import type { MutableRefObject } from 'react';
 import { AnimatedBeam, Circle } from '../ui/animated-beam';
 import {
   SiReact,
@@ -18,6 +19,12 @@ import {
   SiJest,
   SiCypress,
   SiTestinglibrary,
+  SiNodedotjs,
+  SiExpress,
+  SiPhp,
+  SiLaravel,
+  SiMongodb,
+  SiMysql,
 } from 'react-icons/si';
 import type { IconType } from 'react-icons';
 
@@ -39,14 +46,22 @@ const brandLogos: Brand[] = [
   { name: 'Jest', Icon: SiJest, color: '#C21325' },
   { name: 'Cypress', Icon: SiCypress, color: '#17202C' },
   { name: 'Testing Library', Icon: SiTestinglibrary, color: '#E33332' },
+  { name: 'Node.js', Icon: SiNodedotjs, color: '#339933' },
+  { name: 'Express.js', Icon: SiExpress, color: '#FFFFFF' },
+  { name: 'PHP', Icon: SiPhp, color: '#777BB4' },
+  { name: 'Laravel', Icon: SiLaravel, color: '#FF2D20' },
+  { name: 'MongoDB', Icon: SiMongodb, color: '#47A248' },
+  { name: 'MySQL', Icon: SiMysql, color: '#4479A1' },
 ];
 
 const beamLogos = [
   brandLogos.find((b) => b.name === 'React')!,
   brandLogos.find((b) => b.name === 'TypeScript')!,
   brandLogos.find((b) => b.name === 'Next.js')!,
+  brandLogos.find((b) => b.name === 'Laravel')!,
+  brandLogos.find((b) => b.name === 'Node.js')!,
+  brandLogos.find((b) => b.name === 'MongoDB')!,
   brandLogos.find((b) => b.name === 'Tailwind CSS')!,
-  brandLogos.find((b) => b.name === 'JavaScript')!,
   brandLogos.find((b) => b.name === 'MUI')!,
 ];
 
@@ -54,25 +69,34 @@ const beamColors = [
   ['#61DAFB', '#3B82F6'],
   ['#3178C6', '#6366F1'],
   ['#FFFFFF', '#94A3B8'],
+  ['#FF2D20', '#F97316'],
+  ['#339933', '#22C55E'],
+  ['#47A248', '#34D399'],
   ['#06B6D4', '#38BDF8'],
-  ['#F7DF1E', '#FBBF24'],
   ['#007FFF', '#3B82F6'],
 ];
 
-const ringPositions = [
-  { left: '85%', top: '50%' },
-  { left: '67.5%', top: '80.3%' },
-  { left: '32.5%', top: '80.3%' },
-  { left: '15%', top: '50%' },
-  { left: '32.5%', top: '19.7%' },
-  { left: '67.5%', top: '19.7%' },
-];
+const RING_SLOTS = beamLogos.length;
+const RING_RADIUS = 37;
+const ringPositions = Array.from({ length: RING_SLOTS }, (_, i) => {
+  const angle = (-90 + (360 / RING_SLOTS) * i) * (Math.PI / 180);
+  return {
+    left: `${50 + RING_RADIUS * Math.cos(angle)}%`,
+    top: `${50 + RING_RADIUS * Math.sin(angle)}%`,
+  };
+});
 
 const timeline: Brand[] = [
   brandLogos.find((b) => b.name === 'React')!,
   brandLogos.find((b) => b.name === 'TypeScript')!,
   brandLogos.find((b) => b.name === 'JavaScript')!,
   brandLogos.find((b) => b.name === 'Next.js')!,
+  brandLogos.find((b) => b.name === 'Node.js')!,
+  brandLogos.find((b) => b.name === 'Express.js')!,
+  brandLogos.find((b) => b.name === 'PHP')!,
+  brandLogos.find((b) => b.name === 'Laravel')!,
+  brandLogos.find((b) => b.name === 'MongoDB')!,
+  brandLogos.find((b) => b.name === 'MySQL')!,
   brandLogos.find((b) => b.name === 'Tailwind CSS')!,
   brandLogos.find((b) => b.name === 'Framer')!,
   brandLogos.find((b) => b.name === 'Vite')!,
@@ -87,6 +111,12 @@ const skills = [
     icon: Code2,
     items: ['React', 'TypeScript', 'JavaScript', 'Next.js'],
     description: 'Building modern, reactive user interfaces',
+  },
+  {
+    category: 'Backend',
+    icon: Server,
+    items: ['PHP', 'Laravel', 'Node.js', 'Express.js', 'MongoDB', 'MySQL'],
+    description: 'Scalable APIs, databases and server logic',
   },
   {
     category: 'Styling',
@@ -110,6 +140,7 @@ const skills = [
 
 const categoryColors: Record<string, string> = {
   Frontend: 'from-cyan-500 to-blue-500',
+  Backend: 'from-green-500 to-emerald-500',
   Styling: 'from-purple-500 to-pink-500',
   Tools: 'from-orange-500 to-red-500',
   Testing: 'from-emerald-500 to-teal-500',
@@ -121,14 +152,9 @@ const logoFor = (name: string) =>
 export const Skills = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const hubRef = useRef<HTMLDivElement>(null);
-  const logoRefs = [
-    useRef<HTMLDivElement>(null),
-    useRef<HTMLDivElement>(null),
-    useRef<HTMLDivElement>(null),
-    useRef<HTMLDivElement>(null),
-    useRef<HTMLDivElement>(null),
-    useRef<HTMLDivElement>(null),
-  ];
+  const logoRefs = Array.from({ length: RING_SLOTS }, () => ({
+    current: null as HTMLDivElement | null,
+  })) as MutableRefObject<HTMLDivElement | null>[];
   const marqueeRef = useRef<HTMLDivElement>(null);
   const [tickerDuration, setTickerDuration] = useState(12);
 
@@ -198,21 +224,21 @@ export const Skills = () => {
           {/* Orbiting Ring */}
           <div className="absolute inset-0 animate-orbit">
             {/* Logos arranged on a ring */}
-            {beamLogos.map((brand, i) => (
-              <div
-                key={brand.name}
-                className="absolute z-10 -translate-x-1/2 -translate-y-1/2"
-                style={{ left: ringPositions[i].left, top: ringPositions[i].top }}
+{beamLogos.map((brand, i) => (
+            <div
+              key={brand.name}
+              className="absolute z-10 -translate-x-1/2 -translate-y-1/2"
+              style={{ left: ringPositions[i].left, top: ringPositions[i].top }}
+            >
+              <Circle
+                ref={logoRefs[i]}
+                className="h-11 w-11 sm:h-12 sm:w-12 p-2 border-white/20 hover:border-white/50 transition-all duration-300 hover:scale-110 animate-counter-orbit"
+                style={{ boxShadow: `0 0 22px -6px ${brand.color}88` }}
               >
-                <Circle
-                  ref={logoRefs[i]}
-                  className="h-12 w-12 sm:h-14 sm:w-14 p-2.5 border-white/20 hover:border-white/50 transition-all duration-300 hover:scale-110 animate-counter-orbit"
-                  style={{ boxShadow: `0 0 22px -6px ${brand.color}88` }}
-                >
-                  <brand.Icon className="w-full h-full" style={{ color: brand.color }} />
-                </Circle>
-              </div>
-            ))}
+                <brand.Icon className="w-full h-full" style={{ color: brand.color }} />
+              </Circle>
+            </div>
+          ))}
           </div>
 
           {/* Animated Beams from logos to hub */}
@@ -262,7 +288,7 @@ export const Skills = () => {
         <div className="mt-14 grid md:grid-cols-2 gap-6 lg:gap-8">
           {skills.map((skillGroup, index) => {
             const Icon = skillGroup.icon;
-            const gradient = categoryColors[skillGroup.category];
+            const gradient = categoryColors[skillGroup.category] || 'from-cyan-500 to-blue-500';
 
             return (
               <motion.div
