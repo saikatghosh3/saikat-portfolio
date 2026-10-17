@@ -79,7 +79,7 @@ export const projects: Project[] = [
     description: "A responsive E-commerce  fullstack website with a clean code and  design",
     technologies: ["Next.js", "Tailwind CSS", "MongoDB"],
     imageUrl: image15,
-    liveUrl: "https://e-commerce-fullstack-ivory.vercel.app/",
+    liveUrl: "https://e-commerce-rosy-seven-24.vercel.app/",
     githubUrl: "https://github.com",
     featured: true
   },
