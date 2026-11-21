@@ -48,10 +48,10 @@ export const Certifications = ({ preview = false }: CertificationsProps) => {
           <div className="flex flex-col items-center">
             <Link
               to="/certifications"
-              className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-medium hover:shadow-lg hover:shadow-indigo-500/25 transition-all duration-300 hover:scale-105"
+              className="group inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 text-white text-xs font-medium sm:gap-2 sm:px-6 sm:py-3 sm:text-sm hover:shadow-lg hover:shadow-indigo-500/25 transition-all duration-300 hover:scale-105"
             >
               View All Certifications
-              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+              <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </div>
         ) : (

@@ -269,7 +269,7 @@ export const ContactForm: React.FC = () => {
       <button
         type="submit"
         disabled={sending}
-        className="w-full py-3 px-6 text-white font-semibold text-lg uppercase rounded-lg shadow-md bg-gradient-to-r from-green-500 to-green-700 hover:from-green-700 hover:to-green-500 transform hover:-translate-y-1 transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
+        className="w-full py-2.5 px-4 text-white font-semibold text-sm rounded-lg shadow-md bg-gradient-to-r from-green-500 to-green-700 hover:from-green-700 hover:to-green-500 transform hover:-translate-y-0.5 sm:py-3 sm:px-6 sm:text-base transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
       >
         {sending ? "Sending..." : "Send Message"}
       </button>

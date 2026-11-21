@@ -51,9 +51,9 @@ export const ChatBot = () => {
             <motion.div
               whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 0.94 }}
-              className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-indigo-500 via-purple-600 to-fuchsia-600 flex items-center justify-center shadow-2xl shadow-indigo-500/40 group-hover:shadow-indigo-500/60 ring-2 ring-white/10 transition-all duration-300"
+              className="relative w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-indigo-500 via-purple-600 to-fuchsia-600 flex items-center justify-center shadow-2xl shadow-indigo-500/40 group-hover:shadow-indigo-500/60 ring-2 ring-white/10 transition-all duration-300"
             >
-              <MessageCircle className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
+              <MessageCircle className="w-5 h-5 sm:w-7 sm:h-7 text-white" />
             </motion.div>
           </motion.button>
         )}
@@ -140,16 +140,16 @@ export const ChatBot = () => {
                   onKeyDown={handleKeyDown}
                   placeholder="Ask about Saikat..."
                   disabled={isTyping}
-                  className="flex-1 min-w-0 bg-white/[0.06] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500/60 focus:ring-1 focus:ring-indigo-500/40 transition-all duration-200 disabled:opacity-50"
+                  className="flex-1 min-w-0 bg-white/[0.06] border border-white/10 rounded-lg px-3 py-2.5 text-sm text-white sm:px-4 sm:py-3 sm:rounded-xl placeholder-slate-500 focus:outline-none focus:border-indigo-500/60 focus:ring-1 focus:ring-indigo-500/40 transition-all duration-200 disabled:opacity-50"
                   style={{ WebkitAppearance: 'none' }}
                 />
                 <motion.button
                   whileTap={{ scale: 0.9 }}
                   type="submit"
                   disabled={!input.trim() || isTyping}
-                  className="p-3 rounded-xl bg-gradient-to-br from-indigo-500 to-fuchsia-600 text-white hover:from-indigo-600 hover:to-fuchsia-700 disabled:opacity-40 disabled:cursor-not-allowed transition-all duration-200 shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 cursor-pointer shrink-0"
+                  className="p-2.5 rounded-lg bg-gradient-to-br from-indigo-500 to-fuchsia-600 text-white sm:p-3 sm:rounded-xl hover:from-indigo-600 hover:to-fuchsia-700 disabled:opacity-40 disabled:cursor-not-allowed transition-all duration-200 shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 cursor-pointer shrink-0"
                 >
-                  <Send className="w-[18px] h-[18px]" />
+                  <Send className="w-4 h-4 sm:w-[18px] sm:h-[18px]" />
                 </motion.button>
               </form>
             </div>

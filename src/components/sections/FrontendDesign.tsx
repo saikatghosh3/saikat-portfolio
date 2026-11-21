@@ -83,11 +83,11 @@ export const FrontendDesign = () => {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group/btn flex items-center justify-center gap-2 w-full px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 text-white text-sm font-medium hover:shadow-lg hover:shadow-indigo-500/25 transition-all duration-300 hover:-translate-y-0.5"
+                      className="group/btn flex items-center justify-center gap-1.5 w-full px-3 py-1.5 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 text-white text-xs font-medium sm:gap-2 sm:px-4 sm:py-2 sm:text-sm hover:shadow-lg hover:shadow-indigo-500/25 transition-all duration-300 hover:-translate-y-0.5"
                     >
-                      <Rocket className="w-4 h-4 group-hover/btn:animate-pulse" />
+                      <Rocket className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover/btn:animate-pulse" />
                       View Design
-                      <ExternalLink className="w-3.5 h-3.5 opacity-70" />
+                      <ExternalLink className="w-3 h-3 opacity-70 sm:w-3.5 sm:h-3.5" />
                     </a>
                   )}
                 </div>

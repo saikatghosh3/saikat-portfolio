@@ -22,7 +22,7 @@ export const FALLBACK_RESPONSES: string[] = [
   "That's an interesting question! While I don't have a specific answer for that, I can help you with details about Saikat's **skills**, **experience**, **projects**, **education**, or **certifications**. What would you like to explore?",
   "I'm not sure I understand that fully. But I'd love to help! Try asking about Saikat's **tech stack**, **work history**, **projects**, or how to **contact** him.",
   "Hmm, that's beyond my current knowledge. However, I'm an expert on everything Saikat Ghosh! Ask me about his **skills**, **experience**, **projects**, or **education**.",
-  "Great question, but I don't have that info yet. I can tell you all about Saikat's **frontend expertise**, **backend skills**, **notable projects**, or **career journey**. Pick a topic!",
+  "Great question, but I don't have that info yet. I can tell you all about Saikat's **full-stack expertise**, **backend skills**, **notable projects**, or **career journey**. Pick a topic!",
   "I appreciate the curiosity! That specific topic isn't in my database, but I can share insights about Saikat's **professional background**, **technical abilities**, **certifications**, or **contact information**.",
 ];
 
@@ -67,7 +67,7 @@ export const chatCategories: ChatCategory[] = [
       },
       {
         patterns: ["who is saikat", "tell me about saikat", "about saikat", "introduce saikat", "about him", "tell me about him"],
-        response: "**Saikat Ghosh** is a passionate **Frontend Developer** from Dhaka, Bangladesh with over **2+ years** of professional experience. He specializes in building modern, responsive, and high-performance web applications using **React**, **TypeScript**, **Next.js**, **Tailwind CSS**, and more. He's worked at companies like **Roxnor**, **Rafusoft**, **Itransition**, and **Augmedix**. He's always open to new opportunities and collaborations!",
+        response: "**Saikat Ghosh** is a passionate **Fullstack Developer** from Dhaka, Bangladesh with over **2+ years** of professional experience. He specializes in building modern, responsive, and high-performance web applications using **React**, **TypeScript**, **Next.js**, **Tailwind CSS** on the frontend, and **PHP/Laravel**, **Node.js**, **MongoDB**, **MySQL**, **PostgreSQL**, and **Redis** on the backend. He's worked at companies like **Roxnor**, **Rafusoft**, **Itransition**, and **Augmedix**. He's always open to new opportunities and collaborations!",
       },
       {
         patterns: ["thank", "thanks", "thank you", "appreciate"],
@@ -85,15 +85,15 @@ export const chatCategories: ChatCategory[] = [
     intents: [
       {
         patterns: ["skill", "skills", "tech stack", "technology", "technologies", "what does he know", "what can he do", "tech", "tools"],
-        response: "Saikat is proficient in a wide range of technologies:\n\n**Frontend:**\n- **React** (90%) — Hooks, Context, Performance Optimization\n- **TypeScript** (85%) — Strong typing, Interfaces, Advanced Features\n- **JavaScript** (95%) — ES6+, Async Programming, DOM\n- **Next.js** (85%) — SSR, SSG, App Router\n- **Tailwind CSS** (90%) — Responsive Design, Animations\n- **MUI** (80%) — Component Library, Theming\n- **Sass** & **Ant Design**\n\n**Backend:**\n- **PHP / Laravel** (85%) — RESTful APIs, Auth, Eloquent ORM\n- **Node.js / Express.js** (75%)\n- **MongoDB** (70%) & **MySQL** (80%)\n\n**Tools:** Git, VS Code, Webpack, Vite",
+        response: "Saikat is proficient in a wide range of technologies:\n\n**Frontend:**\n- **React** (90%) — Hooks, Context, Performance Optimization\n- **TypeScript** (85%) — Strong typing, Interfaces, Advanced Features\n- **JavaScript** (95%) — ES6+, Async Programming, DOM\n- **Next.js** (85%) — SSR, SSG, App Router\n- **Tailwind CSS** (90%) — Responsive Design, Animations\n- **MUI** (80%) — Component Library, Theming\n- **Sass** & **Ant Design**\n\n**Backend:**\n- **PHP / Laravel** (85%) — RESTful APIs, Auth, Eloquent ORM\n- **Node.js / Express.js** (75%)\n- **MongoDB** (70%), **MySQL** (80%), **PostgreSQL** (75%) & **Redis** (70%)\\n\\n**Tools:** Git, VS Code, Webpack, Vite",
       },
       {
         patterns: ["react", "reactjs", "react.js", "frontend", "frontend skill"],
         response: "Saikat's **React** expertise is at a **90% proficiency level**. He's skilled in:\n\n- **Hooks** — useState, useEffect, useContext, useMemo, useCallback, custom hooks\n- **Context API** — Global state management\n- **Performance Optimization** — Memoization, lazy loading, code splitting\n- **Component Architecture** — Reusable, maintainable UI components\n- **Framer Motion** — Advanced animations and transitions\n\nHe uses React as his primary framework at **Roxnor** where he builds modern, scalable web applications.",
       },
       {
-        patterns: ["backend", "server", "node", "nodejs", "express", "php", "laravel", "database"],
-        response: "Saikat has solid **backend** skills too:\n\n- **PHP / Laravel** (85%) — RESTful APIs, Authentication, Eloquent ORM, CRUD operations\n- **Node.js / Express.js** (75%) — Server-side APIs, REST architecture\n- **MongoDB** (70%) — Schema design, NoSQL databases\n- **MySQL** (80%) — Relational databases, Schema design\n\nHe worked as a **Junior Backend Developer** at Automation Service Limited with **Python/Django**, and later built Laravel apps at **Rafusoft**.",
+        patterns: ["backend", "server", "node", "nodejs", "express", "php", "laravel", "database", "postgres", "postgresql", "mysql", "redis"],
+        response: "Saikat has solid **backend** skills too:\n\n- **PHP / Laravel** (85%) — RESTful APIs, Authentication, Eloquent ORM, CRUD operations\n- **Node.js / Express.js** (75%) — Server-side APIs, REST architecture\n- **MongoDB** (70%) — Schema design, NoSQL databases\n- **MySQL** (80%) — Relational databases, Schema design\\n- **PostgreSQL** (75%) — Advanced SQL, indexing, transactions\\n- **Redis** (70%) — Caching, sessions, high-performance reads\\n\\nHe worked as a **Junior Backend Developer** at Automation Service Limited with **Python/Django**, and later built Laravel apps at **Rafusoft**.",
       },
       {
         patterns: ["typescript", "ts", "javascript", "js"],
@@ -181,11 +181,11 @@ export const chatCategories: ChatCategory[] = [
     intents: [
       {
         patterns: ["contact", "email", "phone", "reach", "get in touch", "hire", "freelance", "available", "collaboration", "how to contact", "linkedin", "github"],
-        response: "Here's how you can reach Saikat:\n\n📧 **Email:** saikat10ghosh@gmail.com\n💼 **LinkedIn:** [linkedin.com/in/saikat-ghosh-52671b344](https://www.linkedin.com/in/saikat-ghosh-52671b344)\n🐙 **GitHub:** [github.com/saikatghosh3](https://github.com/saikatghosh3)\n📍 **Location:** Dhaka, Bangladesh\n\n🟢 **Currently available for freelance work!**\n\nYou can also use the **Contact** section on this website to send a message directly.",
+        response: "Here's how you can reach Saikat:\n\n📧 **Email:** saikat10ghosh@gmail.com\n💼 **LinkedIn:** [linkedin.com/in/saikat-ghosh-dev](https://www.linkedin.com/in/saikat-ghosh-dev)\n🐙 **GitHub:** [github.com/saikatghosh3](https://github.com/saikatghosh3)\n📍 **Location:** Dhaka, Bangladesh\n\n🟢 **Currently available for freelance work!**\n\nYou can also use the **Contact** section on this website to send a message directly.",
       },
       {
         patterns: ["hire", "available", "freelance", "open to work", "looking for job", "job opportunity", "recruit"],
-        response: "Yes! **Saikat is available for freelance work** and open to new opportunities.\n\nHe's currently based in **Dhaka, Bangladesh** and is open to:\n- **Full-time positions** (Frontend / Full-Stack)\n- **Freelance projects**\n- **Remote collaborations**\n\n**Contact:** saikat10ghosh@gmail.com\n**LinkedIn:** [Connect with him](https://www.linkedin.com/in/saikat-ghosh-52671b344)\n\nFeel free to reach out!",
+        response: "Yes! **Saikat is available for freelance work** and open to new opportunities.\n\nHe's currently based in **Dhaka, Bangladesh** and is open to:\n- **Full-time positions** (Full-Stack)\n- **Freelance projects**\n- **Remote collaborations**\n\n**Contact:** saikat10ghosh@gmail.com\n**LinkedIn:** [Connect with him](https://www.linkedin.com/in/saikat-ghosh-dev)\n\nFeel free to reach out!",
       },
       {
         patterns: ["location", "where", "where does he live", "where is he from", "country", "city"],
@@ -197,7 +197,7 @@ export const chatCategories: ChatCategory[] = [
       },
       {
         patterns: ["linkedin", "professional network"],
-        response: "Connect with Saikat on LinkedIn: [linkedin.com/in/saikat-ghosh-52671b344](https://www.linkedin.com/in/saikat-ghosh-52671b344)\n\nHe's active on LinkedIn and open to networking!",
+        response: "Connect with Saikat on LinkedIn: [linkedin.com/in/saikat-ghosh-dev](https://www.linkedin.com/in/saikat-ghosh-dev)\n\nHe's active on LinkedIn and open to networking!",
       },
     ],
   },

@@ -25,6 +25,8 @@ import {
   SiLaravel,
   SiMongodb,
   SiMysql,
+  SiPostgresql,
+  SiRedis,
 } from 'react-icons/si';
 import type { IconType } from 'react-icons';
 
@@ -52,6 +54,8 @@ const brandLogos: Brand[] = [
   { name: 'Laravel', Icon: SiLaravel, color: '#FF2D20' },
   { name: 'MongoDB', Icon: SiMongodb, color: '#47A248' },
   { name: 'MySQL', Icon: SiMysql, color: '#4479A1' },
+  { name: 'PostgreSQL', Icon: SiPostgresql, color: '#4169E1' },
+  { name: 'Redis', Icon: SiRedis, color: '#DC382D' },
 ];
 
 const beamLogos = [
@@ -97,6 +101,8 @@ const timeline: Brand[] = [
   brandLogos.find((b) => b.name === 'Laravel')!,
   brandLogos.find((b) => b.name === 'MongoDB')!,
   brandLogos.find((b) => b.name === 'MySQL')!,
+  brandLogos.find((b) => b.name === 'PostgreSQL')!,
+  brandLogos.find((b) => b.name === 'Redis')!,
   brandLogos.find((b) => b.name === 'Tailwind CSS')!,
   brandLogos.find((b) => b.name === 'Framer')!,
   brandLogos.find((b) => b.name === 'Vite')!,
@@ -115,7 +121,7 @@ const skills = [
   {
     category: 'Backend',
     icon: Server,
-    items: ['PHP', 'Laravel', 'Node.js', 'Express.js', 'MongoDB', 'MySQL'],
+    items: ['PHP', 'Laravel', 'Node.js', 'Express.js', 'MongoDB', 'MySQL', 'PostgreSQL', 'Redis'],
     description: 'Scalable APIs, databases and server logic',
   },
   {

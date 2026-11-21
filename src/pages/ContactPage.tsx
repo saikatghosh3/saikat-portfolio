@@ -168,7 +168,7 @@ export const ContactPage = () => {
 
                 {/* LinkedIn */}
                 <a
-                  href="https://www.linkedin.com/in/saikat-ghosh-52671b344"
+                  href="https://www.linkedin.com/in/saikat-ghosh-dev"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 p-3 rounded-xl hover:bg-white/5 transition-all duration-300 group/link"
@@ -298,7 +298,7 @@ export const ContactPage = () => {
                 <button
                   type="submit"
                   disabled={sending}
-                  className="w-full group/btn relative overflow-hidden px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-medium flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-indigo-500/25 transition-all duration-300 transform hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed"
+                  className="w-full group/btn relative overflow-hidden px-4 py-2.5 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 text-white text-sm font-medium flex items-center justify-center gap-2 sm:px-6 sm:py-3 sm:rounded-xl sm:text-base hover:shadow-lg hover:shadow-indigo-500/25 transition-all duration-300 transform hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   <Send className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                   <span>{sending ? "Sending..." : "Send Message"}</span>

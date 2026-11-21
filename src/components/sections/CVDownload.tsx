@@ -47,27 +47,27 @@ export const CVDownload = () => {
           {/* Card Glow Effect */}
           <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-indigo-500 to-purple-500 opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-md" />
           
-          <div className="relative backdrop-blur-sm bg-white/5 rounded-2xl border border-white/10 p-8 sm:p-10 hover:border-white/20 transition-all duration-500">
+          <div className="relative backdrop-blur-sm bg-white/5 rounded-2xl border border-white/10 p-5 sm:p-10 hover:border-white/20 transition-all duration-500">
             {/* Stats Row */}
           
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
+            <div className="flex flex-wrap justify-center gap-2.5 sm:gap-4 mb-6 sm:mb-8">
               <button
                 onClick={handleDownload}
-                className="group/btn relative overflow-hidden px-8 py-3 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-medium flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-indigo-500/25 transition-all duration-300 transform hover:-translate-y-0.5"
+                className="group/btn relative overflow-hidden inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 text-white text-xs font-medium sm:gap-2 sm:px-6 sm:py-3 sm:rounded-xl sm:text-sm hover:shadow-lg hover:shadow-indigo-500/25 transition-all duration-300 transform hover:-translate-y-0.5"
               >
-                <Download className="w-5 h-5 group-hover/btn:animate-bounce" />
-                <span>Download CV (PDF)</span>
+                <Download className="w-4 h-4 group-hover/btn:animate-bounce sm:w-5 sm:h-5" />
+                <span className="whitespace-nowrap">Download CV</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700" />
               </button>
               
               <button
                 onClick={() => setIsPreviewOpen(!isPreviewOpen)}
-                className="px-8 py-3 rounded-xl bg-white/5 border border-white/10 text-white font-medium flex items-center justify-center gap-2 hover:bg-indigo-500/20 hover:border-indigo-500/50 transition-all duration-300"
+                className="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-white text-xs font-medium sm:gap-2 sm:px-6 sm:py-3 sm:rounded-xl sm:text-sm hover:bg-indigo-500/20 hover:border-indigo-500/50 transition-all duration-300"
               >
-                <Eye className="w-5 h-5" />
-                <span>{isPreviewOpen ? 'Hide Preview' : 'Quick Preview'}</span>
+                <Eye className="w-4 h-4 sm:w-5 sm:h-5" />
+                <span className="whitespace-nowrap">{isPreviewOpen ? 'Hide Preview' : 'Quick Preview'}</span>
               </button>
             </div>
 

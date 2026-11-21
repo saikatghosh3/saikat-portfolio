@@ -226,13 +226,13 @@ export const Portfolio = () => {
                   </div>
                   
                   {/* Action Buttons */}
-                  <div className="flex gap-3 pt-2 border-t border-white/10">
+                  <div className="flex flex-wrap gap-2 pt-2 sm:gap-3 border-t border-white/10">
                     {project.liveUrl && (
                       <a
                         href={project.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group/btn flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 text-white text-sm font-medium hover:shadow-lg hover:shadow-indigo-500/25 transition-all duration-300 transform hover:-translate-y-0.5"
+                        className="group/btn flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 text-white text-xs font-medium sm:gap-2 sm:px-3.5 sm:text-sm hover:shadow-lg hover:shadow-indigo-500/25 transition-all duration-300 transform hover:-translate-y-0.5"
                       >
                         <Link className="w-4 h-4" />
                         Live Demo
@@ -243,7 +243,7 @@ export const Portfolio = () => {
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group/btn flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white/5 border border-white/10 text-gray-300 text-sm font-medium hover:bg-indigo-500/20 hover:border-indigo-500/50 hover:text-white transition-all duration-300"
+                        className="group/btn flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-white/5 border border-white/10 text-gray-300 text-xs font-medium sm:gap-2 sm:px-3.5 sm:text-sm hover:bg-indigo-500/20 hover:border-indigo-500/50 hover:text-white transition-all duration-300"
                       >
                         <Github className="w-4 h-4" />
                         Source Code

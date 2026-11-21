@@ -95,10 +95,10 @@ useEffect(() => {
             <p className="mt-4 text-base sm:text-lg text-gray-300 max-w-xl mx-auto lg:mx-0">
               a passionate{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400 font-semibold">
-                Frontend Developer
+                Fullstack Developer
               </span>{" "}
               with expertise in building modern web applications using React, TypeScript, Next.js,
-              MUI, TailwindCSS, and other cutting-edge technologies.
+              MUI, TailwindCSS, Laravel, Node.js, MongoDB, and other cutting-edge technologies.
             </p>
 
             {/* Description */}
@@ -109,17 +109,17 @@ useEffect(() => {
             </p>
 
             {/* CTA Buttons */}
-            <div className="mt-8 flex flex-wrap justify-center lg:justify-start gap-4">
+            <div className="mt-8 flex flex-wrap justify-center lg:justify-start gap-2.5 sm:gap-4">
               <Link
                 to="/portfolio"
-                className="group flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500 text-white text-sm font-semibold shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:-translate-y-0.5 transition-all duration-300"
+                className="group flex items-center gap-2 px-4 py-2.5 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 text-white text-xs font-semibold sm:px-6 sm:py-3 sm:rounded-xl sm:text-sm shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:-translate-y-0.5 transition-all duration-300"
               >
                 View My Work
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
               </Link>
               <Link
                 to="/contact"
-                className="flex items-center gap-2 px-6 py-3 rounded-xl bg-white/5 border border-white/15 text-gray-200 text-sm font-semibold hover:bg-indigo-500/10 hover:border-indigo-500/50 hover:text-white transition-all duration-300"
+                className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-white/5 border border-white/15 text-gray-200 text-xs font-semibold sm:px-6 sm:py-3 sm:rounded-xl sm:text-sm hover:bg-indigo-500/10 hover:border-indigo-500/50 hover:text-white transition-all duration-300"
               >
                 <Mail className="w-4 h-4" />
                 Contact Me
@@ -161,7 +161,7 @@ useEffect(() => {
                 <div className="relative rounded-full overflow-hidden bg-slate-900 aspect-square">
                   <img
                     src={image1}
-                    alt="Frontend Developer"
+                    alt="Fullstack Developer"
                     className="w-full h-full object-cover"
                   />
                   {/* Overlay Gradient */}

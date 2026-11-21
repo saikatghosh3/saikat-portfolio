@@ -65,12 +65,22 @@ export const skills: SkillCategory = {
     {
       name: "MongoDB",
       level: 70,
-      description: "Schema design, resolvers, Client/Server managemant"
+      description: "Schema design, document modeling, and client/server management"
     },
     {
-      name: "MYSQL",
+      name: "MySQL",
       level: 80,
-      description: "Schema design, perform operations,  Client/Server management"
+      description: "Relational schema design, SQL queries, and performance optimization"
+    },
+    {
+      name: "PostgreSQL",
+      level: 75,
+      description: "Advanced SQL, indexing, data modeling, and transactional queries"
+    },
+    {
+      name: "Redis",
+      level: 70,
+      description: "In-memory caching, session storage, and high-performance data access"
     }
   ],
   Design: [
